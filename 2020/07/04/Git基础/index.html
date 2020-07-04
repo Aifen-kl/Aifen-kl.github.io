@@ -7,15 +7,41 @@
   
   
   
-  <title>程序员秃头日记</title>
+  <title>Git基础 | 程序员秃头日记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="程序员秃头日记">
-<meta property="og:url" content="http://aifen-kl.github.io/index.html">
+  <meta name="description" content="Git介绍Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。 Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。 Git与svn对比Git 不仅仅是个版本控制系统，它也是个内容管理系统(C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git基础">
+<meta property="og:url" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="程序员秃头日记">
+<meta property="og:description" content="Git介绍Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。 Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。 Git与svn对比Git 不仅仅是个版本控制系统，它也是个内容管理系统(C">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C0D32F290-80B0-4EA4-9836-CA58E22569B3.jpg">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583121531631.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583121860348.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583122061650.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583122295296.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583122506882.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161210985.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161259581.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583161696649.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161727676.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583161760867.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161794142.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161827142.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161885338.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583161911782.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583161936762.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583161964206.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583162007512.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583162040849.png">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5Cclip_image002.jpg">
+<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583162276707.png">
+<meta property="article:published_time" content="2020-07-04T15:06:13.841Z">
+<meta property="article:modified_time" content="2020-03-02T15:25:01.589Z">
 <meta property="article:author" content="Aifen-kl">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C0D32F290-80B0-4EA4-9836-CA58E22569B3.jpg">
   
     <link rel="alternative" href="/atom.xml" title="程序员秃头日记" type="application/atom+xml">
   
@@ -33,9 +59,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -46,8 +69,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -275,235 +298,7 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-java-io流" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/05/java-io%E6%B5%81/" class="article-date">
-      <time datetime="2020-07-04T16:13:58.499Z" itemprop="datePublished">2020-07-05</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/05/java-io%E6%B5%81/">java-io流</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h5 id="1-File常量的六个方法"><a href="#1-File常量的六个方法" class="headerlink" title="1. File常量的六个方法"></a>1. File常量的六个方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">返回值      方法名（参数）		  说明</span><br><span class="line">boolean		exists()	       判断文件或目录是否存在</span><br><span class="line">boolean		isFile()		   判断是否是文件</span><br><span class="line">boolean 	isDirectory()	   判断是否是目录</span><br><span class="line">boolean 	delete()		   删除此文件或目录</span><br><span class="line">boolean		createNewFile()    创建名称的空文件</span><br><span class="line">long		length()		   返回文件长度</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-四种文件读写的方式"><a href="#2-四种文件读写的方式" class="headerlink" title="2. 四种文件读写的方式"></a>2. 四种文件读写的方式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream				&#x2F;&#x2F;字节输入流</span><br><span class="line">FileOutputStream			&#x2F;&#x2F;字节输出流</span><br><span class="line">FileReader					&#x2F;&#x2F;字符输入流</span><br><span class="line">FileWriter					&#x2F;&#x2F;字符输出流</span><br><span class="line">FileReader  BufferedReader	&#x2F;&#x2F;加强版字符输入流</span><br><span class="line">FileWriter  BufferedWriter	&#x2F;&#x2F;加强版字符输出流</span><br><span class="line">DataOutputStream			&#x2F;&#x2F;二进制输入流</span><br><span class="line">DataInputStream				&#x2F;&#x2F;二进制输出流</span><br></pre></td></tr></table></figure>
-
-<h5 id="3-流的分类"><a href="#3-流的分类" class="headerlink" title="3.流的分类"></a>3.流的分类</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;流向</span><br><span class="line">    输入流(文件---&gt;控制台)</span><br><span class="line">        读取</span><br><span class="line">    输出流(控制台---&gt;文件)</span><br><span class="line">        写入</span><br><span class="line">&#x2F;&#x2F;读取的方式</span><br><span class="line">    字节流</span><br><span class="line">    字符流</span><br></pre></td></tr></table></figure>
-
-<h5 id="4-FileInputStream-字节输入流"><a href="#4-FileInputStream-字节输入流" class="headerlink" title="4.FileInputStream(字节输入流)"></a>4.FileInputStream(字节输入流)</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2.创建读取对象</span></span><br><span class="line">FileInputStream input = <span class="keyword">new</span> FileInputStream(<span class="string">"E:\123.txt"</span>);</span><br><span class="line"><span class="comment">// 3.调用对应的读取方</span></span><br><span class="line"><span class="keyword">byte</span> [] by = <span class="keyword">new</span> <span class="keyword">byte</span> [input.available()];</span><br><span class="line">input.read(by);  <span class="comment">//读取</span></span><br><span class="line">input.close();   <span class="comment">//关闭资源</span></span><br><span class="line">System.out.println(<span class="keyword">new</span> String(by,<span class="string">"UTF-8"</span>));</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="5-FileOutputStream-字节输出流"><a href="#5-FileOutputStream-字节输出流" class="headerlink" title="5.FileOutputStream(字节输出流)"></a>5.FileOutputStream(字节输出流)</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2:创建写入对象</span></span><br><span class="line">FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="string">"E:\123.txt"</span>, <span class="keyword">true</span>);</span><br><span class="line"><span class="comment">//3:编写写入数据</span></span><br><span class="line">String str = <span class="string">"我更爱郴州。"</span>;</span><br><span class="line"><span class="comment">//4：字节缓冲流</span></span><br><span class="line"><span class="keyword">byte</span> [] by = str.getBytes(<span class="string">"UTF-8"</span>);</span><br><span class="line"><span class="comment">//5:执行写入操作</span></span><br><span class="line">fos.write(by);</span><br><span class="line">System.out.println(<span class="string">"写入成功！！"</span>);</span><br><span class="line"><span class="comment">//6:关闭流</span></span><br><span class="line">fos.close();</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="6-FileReader-字符输入流"><a href="#6-FileReader-字符输入流" class="headerlink" title="6.FileReader(字符输入流)"></a>6.FileReader(字符输入流)</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">//2：创建对象</span></span><br><span class="line">   FileReader fr = <span class="keyword">new</span> FileReader(<span class="string">"E:\123.txt"</span>);</span><br><span class="line">   <span class="comment">//2++: 创建BufferedReader缓冲流</span></span><br><span class="line">   BufferedReader br = <span class="keyword">new</span> BufferedReader(fr);</span><br><span class="line"><span class="comment">//输出数据到程序</span></span><br><span class="line">   String line = <span class="keyword">null</span>;</span><br><span class="line">   <span class="keyword">while</span>((line=br.readLine())!=<span class="keyword">null</span>)&#123;</span><br><span class="line">       System.out.println(line);</span><br><span class="line">   &#125;</span><br><span class="line">   br.close();  <span class="comment">//关闭缓冲</span></span><br><span class="line">   fr.close();  <span class="comment">//关闭资源</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="7-FileWriter-字符输出流"><a href="#7-FileWriter-字符输出流" class="headerlink" title="7.FileWriter(字符输出流)"></a>7.FileWriter(字符输出流)</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2:创建写入对象</span></span><br><span class="line">Writer w = <span class="keyword">new</span> FileWriter(<span class="string">"E://123.txt"</span>,<span class="keyword">true</span>);</span><br><span class="line"><span class="comment">//2++：创建写入的缓冲区</span></span><br><span class="line">BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(w);</span><br><span class="line"><span class="comment">//3:编写写入数据</span></span><br><span class="line">String str = <span class="string">"做头发去了！！"</span>;</span><br><span class="line">bw.newLine();   <span class="comment">//换行的命令</span></span><br><span class="line">bw.write(str);</span><br><span class="line">System.out.println(<span class="string">"写入成功！！"</span>);</span><br><span class="line">bw.flush();   <span class="comment">//清空缓存区域</span></span><br><span class="line">bw.close();</span><br><span class="line">w.close();</span><br></pre></td></tr></table></figure>
-
-<h5 id="8-DataInputStream-二进制输入流"><a href="#8-DataInputStream-二进制输入流" class="headerlink" title="8.DataInputStream(二进制输入流)"></a>8.DataInputStream(二进制输入流)</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="string">"E:\\123.jpg"</span>);</span><br><span class="line">DataInputStream dis = <span class="keyword">new</span> DataInputStream(fis);</span><br><span class="line"><span class="keyword">byte</span> [] by = <span class="keyword">new</span> <span class="keyword">byte</span>[dis.available()];  <span class="comment">//多长</span></span><br><span class="line">dis.read(by);</span><br><span class="line">dis.close();</span><br><span class="line">System.out.println(<span class="keyword">new</span> String(by));</span><br></pre></td></tr></table></figure>
-
-
-<h5 id="9-DataOutputStream-二进制输出流"><a href="#9-DataOutputStream-二进制输出流" class="headerlink" title="9:DataOutputStream(二进制输出流)"></a>9:DataOutputStream(二进制输出流)</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建读取流对象</span></span><br><span class="line">DataInputStream dis = <span class="keyword">new</span> DataInputStream(</span><br><span class="line">    <span class="keyword">new</span> FileInputStream(</span><br><span class="line">        <span class="string">"F:\\newSystem\\Workspaces\\MyEclipse 8.x\\Demo08\\bin\\com\\demo\\FileReaderTest.class"</span>));</span><br><span class="line"><span class="comment">// 创建写入对象</span></span><br><span class="line">DataOutputStream dos = <span class="keyword">new</span> DataOutputStream(<span class="keyword">new</span> FileOutputStream(<span class="string">"F:/temp.class"</span>));</span><br><span class="line"><span class="keyword">int</span> leng;</span><br><span class="line"><span class="keyword">while</span> ((leng = dis.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">    dos.write(leng);</span><br><span class="line">&#125;</span><br><span class="line">dos.flush();</span><br><span class="line">dos.close();</span><br><span class="line">dis.close();</span><br></pre></td></tr></table></figure>
-
-<h5 id="10：拓展-选学–掌握"><a href="#10：拓展-选学–掌握" class="headerlink" title="10：拓展(选学–掌握)"></a>10：拓展(选学–掌握)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1:Java IO流学习总结</span><br><span class="line">    https:&#x2F;&#x2F;www.cnblogs.com&#x2F;hopeyes&#x2F;p&#x2F;9736642.html</span><br><span class="line">    </span><br><span class="line">    https:&#x2F;&#x2F;blog.csdn.net&#x2F;sinat_37064286&#x2F;article&#x2F;details&#x2F;86537354</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-集合" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/05/%E9%9B%86%E5%90%88/" class="article-date">
-      <time datetime="2020-07-04T16:13:33.199Z" itemprop="datePublished">2020-07-05</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/05/%E9%9B%86%E5%90%88/">集合</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h4 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解释：存储单列型的结合，其中集合中的数据不唯一、无序。</span><br></pre></td></tr></table></figure>
-
-<h4 id="List-不唯一、有序"><a href="#List-不唯一、有序" class="headerlink" title="List(==不唯一、有序==)"></a>List(==不唯一、有序==)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.	ArrayList(动态数组)</span><br><span class="line">    &#x2F;&#x2F;定义一个集合</span><br><span class="line">    List list &#x3D; new ArrayList();</span><br><span class="line">    &#x2F;&#x2F;向集合中添加数据</span><br><span class="line">    list.add(&quot;凯凯&quot;);</span><br><span class="line">    list.add(90);</span><br><span class="line">    &#x2F;&#x2F;查看集合的长度</span><br><span class="line">    System.out.print(&quot;集合的长度为&quot;+list.size());</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>.	LinkedList(链式)</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟集合存储数据(链式集合)</span></span><br><span class="line">LinkedList list = <span class="keyword">new</span> LinkedList();</span><br><span class="line"><span class="comment">//获取集合的长度</span></span><br><span class="line">System.out.println(<span class="string">"集合的长度："</span> + list.size());</span><br><span class="line"><span class="comment">//添加数据</span></span><br><span class="line">list.add(<span class="string">"张三"</span>);</span><br><span class="line">list.add(<span class="number">0</span>,<span class="number">45.7</span>);</span><br><span class="line">list.add(<span class="number">2</span>,<span class="number">90</span>);</span><br><span class="line">System.out.println(<span class="string">"集合的长度："</span> + list.size());</span><br><span class="line"><span class="comment">//添加到头部</span></span><br><span class="line">list.addFirst(<span class="string">"凯凯"</span>);</span><br><span class="line"><span class="comment">//添加到尾部</span></span><br><span class="line">list.addLast(<span class="string">"欧欧"</span>);</span><br><span class="line"><span class="comment">//删除头部</span></span><br><span class="line">list.removeFirst();</span><br><span class="line"><span class="comment">//删除尾部</span></span><br><span class="line">list.removeLast();</span><br><span class="line"><span class="comment">//获取头部</span></span><br><span class="line">String str = (String)list.getFirst();</span><br><span class="line"><span class="comment">//获取尾部</span></span><br><span class="line"><span class="keyword">int</span> num = (<span class="keyword">int</span>)list.getLast();</span><br></pre></td></tr></table></figure>
-
-<h4 id="Set-唯一、无序"><a href="#Set-唯一、无序" class="headerlink" title="Set(==唯一、无序==)"></a>Set(==唯一、无序==)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HashSet、TreeSet</span><br></pre></td></tr></table></figure>
-
-<h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  &#x2F;&#x2F;定义键值对集合</span><br><span class="line">Map map &#x3D; new HashMap();</span><br><span class="line">&#x2F;&#x2F;添加数据</span><br><span class="line">map.put(&quot;湘&quot;, &quot;湖南&quot;);</span><br><span class="line">map.put(&quot;粤&quot;, &quot;广东&quot;);</span><br><span class="line">map.put(&quot;鄂&quot;, &quot;湖北&quot;);</span><br><span class="line">map.put(&quot;鲁&quot;, &quot;山东&quot;);</span><br><span class="line">&#x2F;&#x2F;获取集合的长度</span><br><span class="line">System.out.println(&quot;集合的长度：&quot;+map.size());</span><br><span class="line">&#x2F;&#x2F;判断是否包含湖南--湘</span><br><span class="line">System.out.println(&quot;是否包含：&quot;+map.containsKey(&quot;鲁&quot;));</span><br><span class="line"></span><br><span class="line">System.out.println(map);  &#x2F;&#x2F;打印键值对</span><br><span class="line">System.out.println(map.keySet());  &#x2F;&#x2F;打印键集合</span><br><span class="line">System.out.println(map.values());  &#x2F;&#x2F;打印值集合</span><br></pre></td></tr></table></figure>
-
-<h4 id="泛型-避免类型转换"><a href="#泛型-避免类型转换" class="headerlink" title="泛型(==避免类型转换==)"></a>泛型(==避免类型转换==)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">1. ArrayList案例</span><br><span class="line">    &#x2F;&#x2F; 模拟泛型集合存储数据(动态数组)</span><br><span class="line">	List&lt;Dog&gt; list &#x3D; new ArrayList&lt;Dog&gt;();</span><br><span class="line">	&#x2F;&#x2F;实例化狗狗</span><br><span class="line">	Dog dog1 &#x3D; new Dog(&quot;拉布拉多犬&quot;, &quot;邦东&quot;, 89, 25);</span><br><span class="line">	Dog dog2 &#x3D; new Dog(&quot;中华田园犬&quot;, &quot;建立&quot;, 78, 24);</span><br><span class="line">	&#x2F;&#x2F;添加</span><br><span class="line">	list.add(dog1);</span><br><span class="line">	list.add(dog2);</span><br><span class="line">	System.out.println(&quot;第一种方法遍历&quot;);</span><br><span class="line">	&#x2F;&#x2F;第一种方法遍历</span><br><span class="line">	for (int i &#x3D; 0; i &lt; list.size(); i++) &#123;</span><br><span class="line">		System.out.println(list.get(i).toString());</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(&quot;第二种方法遍历(托管)&quot;);</span><br><span class="line">	&#x2F;&#x2F;第二种方法遍历(托管)</span><br><span class="line">	Iterator&lt;Dog&gt; it &#x3D; list.iterator();</span><br><span class="line">	&#x2F;&#x2F;it.hasNext()  查看是否有值</span><br><span class="line">	while(it.hasNext())&#123;</span><br><span class="line">		Dog d &#x3D; it.next();  &#x2F;&#x2F;查找</span><br><span class="line">		System.out.println(d.toString());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">2. Map案例</span><br><span class="line">    &#x2F;&#x2F; 定义键值对集合</span><br><span class="line">	Map&lt;String, Dog&gt; map &#x3D; new HashMap&lt;String, Dog&gt;();</span><br><span class="line">	&#x2F;&#x2F; 实例化狗狗</span><br><span class="line">	Dog dog1 &#x3D; new Dog(&quot;拉布拉多犬&quot;, &quot;萍萍&quot;, 89, 25);</span><br><span class="line">	Dog dog2 &#x3D; new Dog(&quot;中华田园犬&quot;, &quot;花花&quot;, 78, 24);</span><br><span class="line">	&#x2F;&#x2F; 添加数据</span><br><span class="line">	map.put(dog1.getName(), dog1);</span><br><span class="line">	map.put(dog2.getName(), dog2);</span><br><span class="line">	System.out.println(&quot;第一种：遍历数据&quot;);</span><br><span class="line">	&#x2F;&#x2F; 第一种：遍历数据</span><br><span class="line">	for (String name : map.keySet()) &#123;</span><br><span class="line">		System.out.println(name + &quot;:&quot; + map.get(name));</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(&quot;第二种：遍历数据(托管)&quot;);</span><br><span class="line">	&#x2F;&#x2F;第二种：遍历数据(托管)</span><br><span class="line">	Set&lt;String&gt; set &#x3D; map.keySet();</span><br><span class="line">	Iterator&lt;String&gt; it &#x3D; set.iterator();  &#x2F;&#x2F;托管</span><br><span class="line">	while (it.hasNext()) &#123;</span><br><span class="line">		String name &#x3D;  it.next();</span><br><span class="line">		System.out.println(name + &quot;:&quot; + map.get(name));</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(&quot;第三种：获取值&quot;);</span><br><span class="line">	&#x2F;&#x2F;获取值</span><br><span class="line">	Collection&lt;Dog&gt; coo &#x3D; map.values();</span><br><span class="line">	Iterator&lt;Dog&gt; i &#x3D; coo.iterator();</span><br><span class="line">	while (i.hasNext()) &#123;</span><br><span class="line">		Dog dog &#x3D; (Dog) i.next();</span><br><span class="line">		System.out.println(dog.toString());</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="拓展問題"><a href="#拓展問題" class="headerlink" title="==拓展問題=="></a>==拓展問題==</h4><p>  1：arraylist和vector和linkedlist的区别?  </p>
-<pre><code>參考文檔
-    https://blog.csdn.net/kuangsonghan/article/details/79861170
-
-    https://www.liangzl.com/get-article-detail-6857.html</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-java多线程总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/" class="article-date">
-      <time datetime="2020-07-04T16:13:29.102Z" itemprop="datePublished">2020-07-05</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/">java多线程总结</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="线程和进程的区别"><a href="#线程和进程的区别" class="headerlink" title="线程和进程的区别"></a>线程和进程的区别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">进程：有独立的内存空间和系统资源。</span><br><span class="line">线程：进程中执行运算的最小单位，可完成一个独立的顺序控制流程。</span><br></pre></td></tr></table></figure>
-
-<h4 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建"></a>线程的创建</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">创建和启动线程：</span><br><span class="line">	创建：①继承Thread类</span><br><span class="line">	      ②实现Runnable接口</span><br><span class="line">    启动：①start();----内置了一个同步</span><br><span class="line">          ②run();</span><br></pre></td></tr></table></figure>
-
-<h4 id="继承Thread和实现Runnable的优势"><a href="#继承Thread和实现Runnable的优势" class="headerlink" title="继承Thread和实现Runnable的优势"></a>继承Thread和实现Runnable的优势</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">①：继承Thread类</span><br><span class="line">    编写简单，可直接操作线程</span><br><span class="line">    适用于单继承</span><br><span class="line"></span><br><span class="line">②：实现Runnable接口</span><br><span class="line">    避免单继承局限性</span><br><span class="line">    便于共享资源</span><br></pre></td></tr></table></figure>
-
-<h4 id="线程的状态和调度"><a href="#线程的状态和调度" class="headerlink" title="线程的状态和调度"></a>线程的状态和调度</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">A：线程的状态：</span><br><span class="line">	创建、就绪、运行、阻塞、死亡。</span><br><span class="line">B：线程调度：</span><br><span class="line">	①线程的优先级(默认为5)</span><br><span class="line">	    setPriority(int grade)</span><br><span class="line">	    Thread.MIN_PRIORITY</span><br><span class="line">	    Thread.MAX_PRIORITY</span><br><span class="line">	②线程的休眠</span><br><span class="line">	    sleep(long millis)</span><br><span class="line">	③线程的强制运行</span><br><span class="line">	    join()</span><br><span class="line">	    join(long millis)</span><br><span class="line">	    join(long millis,int nanos)</span><br><span class="line">	④线程的礼让(只是提供一种可能，不一定实现)</span><br><span class="line">	    yield()</span><br></pre></td></tr></table></figure>
-
-<h4 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">同步(synchronized)</span><br><span class="line">	①同步方法：</span><br><span class="line">		例如：访问修饰符 synchronized 返回类型(参数列表) &#123;  &#125;</span><br><span class="line">	②同步代码块：</span><br><span class="line">		例如：synchronized(this) &#123; &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①：线程安全：效率低，适用于多线程。</span><br><span class="line"></span><br><span class="line">②：线程不安全：效率高，适用于单线程。</span><br></pre></td></tr></table></figure>
-
-<h4 id="拓展题目"><a href="#拓展题目" class="headerlink" title="拓展题目"></a>拓展题目</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">①：线程创建的三种方式及区别</span><br><span class="line">    https:&#x2F;&#x2F;www.cnblogs.com&#x2F;htyj&#x2F;p&#x2F;10848646.html</span><br><span class="line">②：Java实现线程安全的方式</span><br><span class="line">    https:&#x2F;&#x2F;developer.51cto.com&#x2F;art&#x2F;201910&#x2F;605093.htm</span><br><span class="line">③：JAVA锁有哪些种类，以及区别(没有定力不要看)</span><br><span class="line">    https:&#x2F;&#x2F;www.cnblogs.com&#x2F;lxmyhappy&#x2F;p&#x2F;7380073.html</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Git基础" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Git基础" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/" class="article-date">
@@ -520,13 +315,20 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/">Git基础</a>
+    <h1 class="article-title" itemprop="name">
+      Git基础
     </h1>
   
 
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -669,31 +471,157 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/">Git基础</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Aifen-kl 的个人博客">Aifen-kl</a></p>
+        <p><span>发布时间:</span>2020年07月04日 - 23时06分</p>
+        <p><span>最后更新:</span>2020年03月02日 - 23时25分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/" title="Git基础">http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/　　作者: Aifen-kl" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2020/07/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          java多线程总结
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git介绍"><span class="toc-number">1.</span> <span class="toc-text">Git介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git与svn对比"><span class="toc-number">2.</span> <span class="toc-text">Git与svn对比</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git工作流程"><span class="toc-number">3.</span> <span class="toc-text">git工作流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git的安装"><span class="toc-number">4.</span> <span class="toc-text">Git的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件下载"><span class="toc-number">4.1.</span> <span class="toc-text">软件下载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用git管理文件版本"><span class="toc-number">5.</span> <span class="toc-text">使用git管理文件版本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版本库"><span class="toc-number">5.1.</span> <span class="toc-text">创建版本库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用GitBash"><span class="toc-number">5.2.</span> <span class="toc-text">使用GitBash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加文件"><span class="toc-number">5.3.</span> <span class="toc-text">添加文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布版本"><span class="toc-number">5.4.</span> <span class="toc-text">发布版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#取回更新"><span class="toc-number">5.5.</span> <span class="toc-text">取回更新</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#远程仓库"><span class="toc-number">6.</span> <span class="toc-text">远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加远程库"><span class="toc-number">6.1.</span> <span class="toc-text">添加远程库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在gitee上创建仓库"><span class="toc-number">6.1.1.</span> <span class="toc-text">在gitee上创建仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh协议"><span class="toc-number">6.2.</span> <span class="toc-text">ssh协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是ssh"><span class="toc-number">6.2.1.</span> <span class="toc-text">什么是ssh?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于密匙的安全验证"><span class="toc-number">6.2.2.</span> <span class="toc-text">基于密匙的安全验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从远程仓库克隆"><span class="toc-number">6.3.</span> <span class="toc-text">从远程仓库克隆</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分支管理"><span class="toc-number">7.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建合并分支"><span class="toc-number">7.1.</span> <span class="toc-text">创建合并分支</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在IntelliJ-IDEA中使用git"><span class="toc-number">8.</span> <span class="toc-text">在IntelliJ IDEA中使用git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在Idea中配置git"><span class="toc-number">8.1.</span> <span class="toc-text">在Idea中配置git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将工程添加至git"><span class="toc-number">8.2.</span> <span class="toc-text">将工程添加至git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从远程仓库克隆-1"><span class="toc-number">8.3.</span> <span class="toc-text">从远程仓库克隆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从服务端拉取代码"><span class="toc-number">8.4.</span> <span class="toc-text">从服务端拉取代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#客户端软件Sourcetree"><span class="toc-number">9.</span> <span class="toc-text">客户端软件Sourcetree</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
 
 
 
 
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
 
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
 
 
-  
-  
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2020/07/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/" title="上一篇: java多线程总结">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/07/05/java-io%E6%B5%81/">java-io流</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/05/%E9%9B%86%E5%90%88/">集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/">java多线程总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/">Git基础</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
 
 </div>
       <footer id="footer">
