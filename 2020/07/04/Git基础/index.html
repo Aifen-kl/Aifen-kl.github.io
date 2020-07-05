@@ -1,340 +1,289 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
-  
-  
-  
-  
-  <title>Git基础 | 秃头日记</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Git介绍Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。 Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。 Git与svn对比Git 不仅仅是个版本控制系统，它也是个内容管理系统(C">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Git基础">
-<meta property="og:url" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/index.html">
-<meta property="og:site_name" content="秃头日记">
-<meta property="og:description" content="Git介绍Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。 Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。 Git与svn对比Git 不仅仅是个版本控制系统，它也是个内容管理系统(C">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C0D32F290-80B0-4EA4-9836-CA58E22569B3.jpg">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583121531631.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583121860348.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583122061650.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583122295296.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583122506882.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161210985.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161259581.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583161696649.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161727676.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583161760867.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161794142.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161827142.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583161885338.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583161911782.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583161936762.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583161964206.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C1583162007512.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583162040849.png">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5Cclip_image002.jpg">
-<meta property="og:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/1583162276707.png">
-<meta property="article:published_time" content="2020-07-04T15:06:13.841Z">
-<meta property="article:modified_time" content="2020-03-02T15:25:01.589Z">
-<meta property="article:author" content="Aifen-kl">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/%5C0D32F290-80B0-4EA4-9836-CA58E22569B3.jpg">
-  
-    <link rel="alternative" href="/atom.xml" title="秃头日记" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/img/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+    
+    
+<link rel="stylesheet" href="/css/mdui.min.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+    
+    
 
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          fancybox: true,
-          animate: true,
-          isHome: false,
-          isPost: true,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
+    
+        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            Git基础 | 秃头日记
+        
+    </title>
+    
+    
 <meta name="generator" content="Hexo 4.2.1"></head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">秃头日记</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
 
-        <a href="/" class="profilepic">
-            
-            <img lazy-src="/img/avatar.png" class="js-avatar">
-            
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">Aifen-kl</a></h1>
-        </hgroup>
-        
-        
-            <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
-            </form>
-            <div id="local-search-result"></div>
-        
-        
-            <script type="text/javascript">
-                (function() {
-                    'use strict';
-                    function getMatchData(keyword, data) {
-                        var matchData = [];
-                        for(var i =0;i<data.length;i++){
-                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
-                                matchData.push(data[i])
-                        }
-                        return matchData;
-                    }
-                    var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
-                    $input.keyup(function(){
-                        $.ajax({
-                            url: '/search.json',
-                            dataType: "json",
-                            success: function( json ) {
-                                var str='<ul class=\"search-result-list\">';                
-                                var keyword = $input.val().trim().toLowerCase();
-                                $resultContent.innerHTML = "";
-                                if ($input.val().trim().length <= 0) {
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                }
-                                var results = getMatchData(keyword, json);
-                                if(results.length === 0){
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                } 
-                                for(var i =0; i<results.length; i++){
-                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
-                                }
-                                str += "</ul>";
-                                $resultContent.empty();
-                                $resultContent.append(str);
-                                $('#switch-area').hide();
-                            }
-                        });
-                    });
-                })();
-            </script>
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a  href="/archives/">所有文章</a></li>
-                        
-                            <li><a  href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">玩转开发工具</a></li>
-                        
-                            <li><a  href="/categories/digital">玩转数码</a></li>
-                        
-                            <li><a  href="/categories/algorithm">算法学习</a></li>
-                        
-                            <li><a  href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl github"  target="_blank" href="/xxxxx" title="github">github</a>
-                            
-                                <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
-                            
-                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        
-                    </div>
-                </section>
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
-                    
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
 </div>
 
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Aifen-kl</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/avatar.png" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">Aifen-kl</a></h1>
-            </hgroup>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
             
-            <nav class="header-menu">
-                <ul>
                 
-                    <li><a href="/archives/">所有文章</a></li>
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
                 
-                    <li><a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">玩转开发工具</a></li>
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
                 
-                    <li><a href="/categories/digital">玩转数码</a></li>
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
                 
-                    <li><a href="/categories/algorithm">算法学习</a></li>
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
                 
-                    <li><a href="/about/">关于我</a></li>
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
                 
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="github" target="_blank" href="/xxxxx" title="github">github</a>
-                    
-                        <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
-                    
-                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-                    
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
                 </div>
-            </nav>
-        </header>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
     </div>
-</nav>
-      <div class="body-wrap"><article id="post-Git基础" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/" class="article-date">
-      <time datetime="2020-07-04T15:06:13.841Z" itemprop="datePublished">2020-07-04</time>
-</a>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">Aifen-kl</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:xxx@xxx.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a href="https://your.url" target="_blank" rel="noopener" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-steam"></i></span>
+                    <a href="https://your.url" target="_blank" rel="noopener" class="mdui-chip-title">Steam</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-weibo"></i></span>
+                    <a href="https://your.url" target="_blank" rel="noopener" class="mdui-chip-title">Weibo</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a href="https://garybear.cn/hexo-theme-meadow/" target="_blank" rel="noopener" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
 
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
+
+    <div class="mdui-divider"></div>
     
     
-      <header class="article-header">
-        
+</aside>
   
-    <h1 class="article-title" itemprop="name">
-      Git基础
-    </h1>
-  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/">Git基础</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2020-07-04
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2020-03-02
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
-        <div class="clearfix"></div>
-      </div>
-      
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="Git介绍"><a href="#Git介绍" class="headerlink" title="Git介绍"></a>Git介绍</h1><p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Git基础&url=http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/&pic=http://Aifen-kl.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Git基础&url=http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/&via=Aifen-kl" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/&title=Git基础" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=秃头日记&title=Git基础&summary=&pics=http://Aifen-kl.github.io/null&url=http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/&text=Git基础" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="Git介绍"><a href="#Git介绍" class="headerlink" title="Git介绍"></a>Git介绍</h1><p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
 <p>Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</p>
 <p>Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。</p>
 <h1 id="Git与svn对比"><a href="#Git与svn对比" class="headerlink" title="Git与svn对比"></a>Git与svn对比</h1><p>Git 不仅仅是个版本控制系统，它也是个内容管理系统(CMS)，工作管理系统等。<br>如果你是一个具有使用 SVN 背景的人，你需要做一定的思想转换，来适应 Git 提供的一些概念和特征。<br>Git 与 SVN 区别点：<br>1、Git 是分布式的，SVN 不是：这是 Git 和其它非分布式的版本控制系统，例如 SVN，CVS 等，最核心的区别。<br>2、Git 把内容按元数据方式存储，而 SVN 是按文件：所有的资源控制系统都是把文件的元信息隐藏在一个类似 .svn、.cvs 等的文件夹里。<br>3、Git 分支和 SVN 的分支不同：分支在 SVN 中一点都不特别，其实它就是版本库中的另外一个目录。<br>4、Git 没有一个全局的版本号，而 SVN 有：目前为止这是跟 SVN 相比 Git 缺少的最大的一个特征。<br>5、Git 的内容完整性要优于 SVN：Git 的内容存储使用的是 SHA-1 哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。</p>
@@ -468,283 +417,145 @@
 <p>当然不同的ide开发环境都有各种各样的git插件，操作方法各不相同，Sourcetree是一个跨平台不受ide限制的git管理工具。不管你做java，还是python、Android都可以使用。</p>
 <p>有兴趣的同学可以自行百度学习，在这里不做讲解</p>
 
-      
-    </div>
-    
   </div>
+  <!--文末结束语-->
   
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/">Git基础</a></p>
-        <p><span>文章作者:</span><a  href="/" title="访问 Aifen-kl 的个人博客">Aifen-kl</a></p>
-        <p><span>发布时间:</span>2020年07月04日 - 23时06分</p>
-        <p><span>最后更新:</span>2020年03月02日 - 23时25分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/" title="Git基础">http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://aifen-kl.github.io/2020/07/04/Git%E5%9F%BA%E7%A1%80/　　作者: Aifen-kl" title=""></span>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-<nav id="article-nav">
-  
-    <a  href="/2020/07/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          java多线程总结
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-
-  
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/07/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>java多线程总结</span>
+      </a>
+    
+    
+  </nav>
 </article>
 
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git介绍"><span class="toc-number">1.</span> <span class="toc-text">Git介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git与svn对比"><span class="toc-number">2.</span> <span class="toc-text">Git与svn对比</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git工作流程"><span class="toc-number">3.</span> <span class="toc-text">git工作流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git的安装"><span class="toc-number">4.</span> <span class="toc-text">Git的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件下载"><span class="toc-number">4.1.</span> <span class="toc-text">软件下载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用git管理文件版本"><span class="toc-number">5.</span> <span class="toc-text">使用git管理文件版本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版本库"><span class="toc-number">5.1.</span> <span class="toc-text">创建版本库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用GitBash"><span class="toc-number">5.2.</span> <span class="toc-text">使用GitBash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加文件"><span class="toc-number">5.3.</span> <span class="toc-text">添加文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布版本"><span class="toc-number">5.4.</span> <span class="toc-text">发布版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#取回更新"><span class="toc-number">5.5.</span> <span class="toc-text">取回更新</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#远程仓库"><span class="toc-number">6.</span> <span class="toc-text">远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加远程库"><span class="toc-number">6.1.</span> <span class="toc-text">添加远程库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在gitee上创建仓库"><span class="toc-number">6.1.1.</span> <span class="toc-text">在gitee上创建仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh协议"><span class="toc-number">6.2.</span> <span class="toc-text">ssh协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是ssh"><span class="toc-number">6.2.1.</span> <span class="toc-text">什么是ssh?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于密匙的安全验证"><span class="toc-number">6.2.2.</span> <span class="toc-text">基于密匙的安全验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从远程仓库克隆"><span class="toc-number">6.3.</span> <span class="toc-text">从远程仓库克隆</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分支管理"><span class="toc-number">7.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建合并分支"><span class="toc-number">7.1.</span> <span class="toc-text">创建合并分支</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在IntelliJ-IDEA中使用git"><span class="toc-number">8.</span> <span class="toc-text">在IntelliJ IDEA中使用git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在Idea中配置git"><span class="toc-number">8.1.</span> <span class="toc-text">在Idea中配置git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将工程添加至git"><span class="toc-number">8.2.</span> <span class="toc-text">将工程添加至git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从远程仓库克隆-1"><span class="toc-number">8.3.</span> <span class="toc-text">从远程仓库克隆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从服务端拉取代码"><span class="toc-number">8.4.</span> <span class="toc-text">从服务端拉取代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#客户端软件Sourcetree"><span class="toc-number">9.</span> <span class="toc-text">客户端软件Sourcetree</span></a></li></ol>
-</div>
-<style>
-    .left-col .switch-btn {
-        display: none;
-    }
-    .left-col .switch-area {
-        display: none;
-    }
-</style>
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
-        }
-    })
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
-    }
-</script>
 
 
 
-
-<div class="bdsharebuttonbox">
-	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
-	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
-</div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-
-
-
-    
-        <section class="changyan" id="comments">
-  <!--<div id="uyan_frame"></div>-->
-  <div id="SOHUCS"></div>
-  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
-  <script type="text/javascript">
-    window.changyan.api.config({
-      appid: 'xxxx',
-      conf: 'xxxxxxxxx'
-    });
-  </script>
-</section>
-    
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a  href="/2020/07/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/" title="上一篇: java多线程总结">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-        
-            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
-        
-    </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/07/05/java-io%E6%B5%81/">java-io流</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/05/%E9%9B%86%E5%90%88/">集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/">java多线程总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/">Git基础</a></li></ul>
-    
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-    <script>
-        $(".post-list").addClass("toc-article");
-        // $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#toc, .switch-btn, .switch-area").toggle();
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-                $(".switch-btn, .switch-area").fadeToggle(300);
-            }
-        })
-    </script>
-
-
-
-
-    <script>
-        
-    </script>
-
-</div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2020 Aifen-kl
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
-            </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >极客到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-
-    </div>
-    
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-
-<script src="/js/main.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 1;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'xxxxx', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
-
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/07/04/Git%E5%9F%BA%E7%A1%80/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git介绍"><span class="toc-number">1.</span> <span class="toc-text">Git介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git与svn对比"><span class="toc-number">2.</span> <span class="toc-text">Git与svn对比</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git工作流程"><span class="toc-number">3.</span> <span class="toc-text">git工作流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git的安装"><span class="toc-number">4.</span> <span class="toc-text">Git的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件下载"><span class="toc-number">4.1.</span> <span class="toc-text">软件下载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用git管理文件版本"><span class="toc-number">5.</span> <span class="toc-text">使用git管理文件版本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版本库"><span class="toc-number">5.1.</span> <span class="toc-text">创建版本库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用GitBash"><span class="toc-number">5.2.</span> <span class="toc-text">使用GitBash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加文件"><span class="toc-number">5.3.</span> <span class="toc-text">添加文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布版本"><span class="toc-number">5.4.</span> <span class="toc-text">发布版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#取回更新"><span class="toc-number">5.5.</span> <span class="toc-text">取回更新</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#远程仓库"><span class="toc-number">6.</span> <span class="toc-text">远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加远程库"><span class="toc-number">6.1.</span> <span class="toc-text">添加远程库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在gitee上创建仓库"><span class="toc-number">6.1.1.</span> <span class="toc-text">在gitee上创建仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh协议"><span class="toc-number">6.2.</span> <span class="toc-text">ssh协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是ssh"><span class="toc-number">6.2.1.</span> <span class="toc-text">什么是ssh?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于密匙的安全验证"><span class="toc-number">6.2.2.</span> <span class="toc-text">基于密匙的安全验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从远程仓库克隆"><span class="toc-number">6.3.</span> <span class="toc-text">从远程仓库克隆</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分支管理"><span class="toc-number">7.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建合并分支"><span class="toc-number">7.1.</span> <span class="toc-text">创建合并分支</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在IntelliJ-IDEA中使用git"><span class="toc-number">8.</span> <span class="toc-text">在IntelliJ IDEA中使用git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在Idea中配置git"><span class="toc-number">8.1.</span> <span class="toc-text">在Idea中配置git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将工程添加至git"><span class="toc-number">8.2.</span> <span class="toc-text">将工程添加至git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从远程仓库克隆-1"><span class="toc-number">8.3.</span> <span class="toc-text">从远程仓库克隆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从服务端拉取代码"><span class="toc-number">8.4.</span> <span class="toc-text">从服务端拉取代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#客户端软件Sourcetree"><span class="toc-number">9.</span> <span class="toc-text">客户端软件Sourcetree</span></a></li></ol>
+      </li>
+    </ul>
   </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2020 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        Aifen-kl
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+<script src="/js/mdui.min.js"></script>
+<script src="/js/meadow.js"></script>
+
 </body>
-</html>
+</html >
