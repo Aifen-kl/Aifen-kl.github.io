@@ -277,6 +277,116 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-GitHub搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
+      <time datetime="2020-07-05T13:01:21.251Z" itemprop="datePublished">2020-07-05</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">GitHub搭建博客</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="如何搭建一个自己喜欢的博客"><a href="#如何搭建一个自己喜欢的博客" class="headerlink" title="如何搭建一个自己喜欢的博客?"></a>如何搭建一个自己喜欢的博客?</h1><h2 id="1-搭建博客前期准备"><a href="#1-搭建博客前期准备" class="headerlink" title="1.搭建博客前期准备"></a>1.搭建博客前期准备</h2><ul>
+<li><h3 id="下载软件-node-地址-https-nodejs-org-en"><a href="#下载软件-node-地址-https-nodejs-org-en" class="headerlink" title="下载软件 node  地址:https://nodejs.org/en/"></a><strong>下载软件 node  地址:<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></strong></h3><p>选择自己对应的版本 不同操作系统对应版本不同 一般选择长期稳定版</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705111002447.png" alt="image-20200705111002447"></p>
+</li>
+<li><h3 id="注册自己的GitHub账号-搭建自己的线上仓库-网址-https-github-com"><a href="#注册自己的GitHub账号-搭建自己的线上仓库-网址-https-github-com" class="headerlink" title="注册自己的GitHub账号   搭建自己的线上仓库  网址:https://github.com/"></a>注册自己的GitHub账号   搭建自己的线上仓库  网址:<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></h3><p>1.注意仓库名 格式 用户名.github.io 例:</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705111233209.png" alt="image-20200705111233209"></p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705125139187.png" alt="image-20200705125139187"></p>
+<p>2.新建测试文件 index.jsp 在浏览器打开README.md地址显示就ok了：</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705125835835.png" alt="image-20200705125835835"></p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705125854080.png" alt="image-20200705125854080"></p>
+</li>
+</ul>
+<ul>
+<li><h3 id="安装本地Git软件-网址-https-git-scm-com-download"><a href="#安装本地Git软件-网址-https-git-scm-com-download" class="headerlink" title="安装本地Git软件  网址:https://git-scm.com/download"></a>安装本地Git软件  网址:<a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a></h3><p>选择自己对应的版本 不同操作系统对应版本不同</p>
+</li>
+</ul>
+<h2 id><a href="#" class="headerlink" title></a><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705113722525.png" alt="image-20200705113722525"></h2><h2 id="2-检测git-node是否安装成功"><a href="#2-检测git-node是否安装成功" class="headerlink" title="2.检测git/node是否安装成功"></a>2.检测git/node是否安装成功</h2><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705114531590.png" alt="image-20200705114531590"></p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705114623009.png" alt="image-20200705114623009"></p>
+<h2 id="3-安装博客框架（hexo）"><a href="#3-安装博客框架（hexo）" class="headerlink" title="3.安装博客框架（hexo）"></a>3.安装博客框架（hexo）</h2><h4 id="3-1-先在本地-创建一个包-放安装脚本和框架（以后的笔记也是这个包）"><a href="#3-1-先在本地-创建一个包-放安装脚本和框架（以后的笔记也是这个包）" class="headerlink" title="3.1.先在本地 创建一个包 放安装脚本和框架（以后的笔记也是这个包）"></a>3.1.先在本地 创建一个包 放安装脚本和框架（以后的笔记也是这个包）</h4><h4 id="3-2-下载-hexo-script-的安装脚本-网址：https-github-com-kjhuanhao-hexo-script-releases"><a href="#3-2-下载-hexo-script-的安装脚本-网址：https-github-com-kjhuanhao-hexo-script-releases" class="headerlink" title="3.2.下载[hexo-script]的安装脚本  网址：https://github.com/kjhuanhao/hexo-script/releases"></a>3.2.下载[hexo-script]的安装脚本  网址：<a href="https://github.com/kjhuanhao/hexo-script/releases" target="_blank" rel="noopener">https://github.com/kjhuanhao/hexo-script/releases</a></h4><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705191729301.png" alt="image-20200705191729301"></p>
+<h4 id="3-3-将这个脚本保存到之前创建的包，右键打开Git-Bash-Here-，运行以下命令"><a href="#3-3-将这个脚本保存到之前创建的包，右键打开Git-Bash-Here-，运行以下命令" class="headerlink" title="3.3.将这个脚本保存到之前创建的包，右键打开Git Bash Here ，运行以下命令"></a>3.3.将这个脚本保存到之前创建的包，右键打开Git Bash Here ，运行以下命令</h4><p>source install.sh test_node            （配置环境变量）</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705192640314.png" alt="image-20200705192640314"></p>
+<h4 id="3-4-一键安装hexo博客-，同样之前创建的包右键打开Git-Bash-Here-，运行以下命令"><a href="#3-4-一键安装hexo博客-，同样之前创建的包右键打开Git-Bash-Here-，运行以下命令" class="headerlink" title="3.4.一键安装hexo博客  ，同样之前创建的包右键打开Git Bash Here ，运行以下命令"></a>3.4.一键安装hexo博客  ，同样之前创建的包右键打开Git Bash Here ，运行以下命令</h4><h4 id="source-install-sh-hexo-win"><a href="#source-install-sh-hexo-win" class="headerlink" title="source install.sh hexo_win"></a>source install.sh hexo_win</h4><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705193128022.png" alt="image-20200705193128022"></p>
+<h4 id="3-5-运行查看博客-到生成的文件hexoblog里面右键依次运行以下命令"><a href="#3-5-运行查看博客-到生成的文件hexoblog里面右键依次运行以下命令" class="headerlink" title="3.5.运行查看博客  到生成的文件hexoblog里面右键依次运行以下命令"></a>3.5.运行查看博客  到生成的文件hexoblog里面右键依次运行以下命令</h4><h4 id="cd-hexoblog"><a href="#cd-hexoblog" class="headerlink" title="cd hexoblog"></a>cd hexoblog</h4><p>hexo s</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705193331004.png" alt="image-20200705193331004"></p>
+<h4 id="3-6-在浏览器打开-http-localhost-4000-出现改下页面就下载配置成功了"><a href="#3-6-在浏览器打开-http-localhost-4000-出现改下页面就下载配置成功了" class="headerlink" title="3.6.在浏览器打开 http://localhost:4000 出现改下页面就下载配置成功了"></a>3.6.在浏览器打开 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 出现改下页面就下载配置成功了</h4><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705121323176.png" alt="image-20200705121323176"></p>
+<p>到这一步，恭喜你，博客已经配置一半了！！！</p>
+<h2 id="4-本地git生成公钥添加到线上GitHub账号"><a href="#4-本地git生成公钥添加到线上GitHub账号" class="headerlink" title="4.本地git生成公钥添加到线上GitHub账号"></a>4.本地git生成公钥添加到线上GitHub账号</h2><h3 id="4-1-一键生成SSH秘钥"><a href="#4-1-一键生成SSH秘钥" class="headerlink" title="4.1.一键生成SSH秘钥"></a>4.1.一键生成SSH秘钥</h3><p>——您需要在存放install.sh脚本的目录中,右键打开git bash运行以下命令:</p>
+<p>./install.sh git_ssh</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705193802380.png" alt="image-20200705193802380"></p>
+<p>——输入 1</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705193926456.png" alt="image-20200705193926456"></p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705132815535.png" alt="image-20200705132815535"></p>
+<h3 id="4-2去C盘查找并复制公钥"><a href="#4-2去C盘查找并复制公钥" class="headerlink" title="4.2去C盘查找并复制公钥"></a>4.2去C盘查找并复制公钥</h3><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705134208824.png" alt="image-20200705134208824"></p>
+<h3 id="4-3将公钥添加到GitHub账号"><a href="#4-3将公钥添加到GitHub账号" class="headerlink" title="4.3将公钥添加到GitHub账号"></a>4.3将公钥添加到GitHub账号</h3><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705133927399.png" alt="image-20200705133927399"></p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705134004326.png" alt="image-20200705134004326"></p>
+<h2 id="5-一键部署hexo博客"><a href="#5-一键部署hexo博客" class="headerlink" title="5.一键部署hexo博客"></a>5.一键部署hexo博客</h2><h3 id="5-1您需要在存放install-sh脚本的目录中-右键打开git-bash运行以下命令"><a href="#5-1您需要在存放install-sh脚本的目录中-右键打开git-bash运行以下命令" class="headerlink" title="5.1您需要在存放install.sh脚本的目录中,右键打开git bash运行以下命令:"></a>5.1您需要在存放install.sh脚本的目录中,右键打开git bash运行以下命令:</h3><p>source install.sh deploy</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705194141813.png" alt="image-20200705194141813"></p>
+<h3 id="5-2你需要将up-sh复制到hexoblog文件-也就是复制到你的博客根目录下"><a href="#5-2你需要将up-sh复制到hexoblog文件-也就是复制到你的博客根目录下" class="headerlink" title="5.2你需要将up.sh复制到hexoblog文件,也就是复制到你的博客根目录下"></a>5.2你需要将up.sh复制到hexoblog文件,也就是复制到你的博客根目录下</h3><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705194207925.png" alt="image-20200705194207925"></p>
+<h3 id="5-3在当前页面右键-gitbash-运行以下命令"><a href="#5-3在当前页面右键-gitbash-运行以下命令" class="headerlink" title="5.3在当前页面右键 gitbash 运行以下命令"></a>5.3在当前页面右键 gitbash 运行以下命令</h3><p>source up.sh</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705194326401.png" alt="image-20200705194326401"></p>
+<h3 id="5-4部署博客必要的配置"><a href="#5-4部署博客必要的配置" class="headerlink" title="5.4部署博客必要的配置"></a>5.4部署博客必要的配置</h3><p>首先你需要打开根目录配置文件_config.yml</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705194359025.png" alt="image-20200705194359025"></p>
+<p>deploy:<br>  type: git<br>  repo: 这里填你的仓库地址,建议使用SSH地址,它是以git开头的<br>  branch: master</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705135347417.png" alt="image-20200705135347417"></p>
+<p>2.修改上面</p>
+<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705135621289.png" alt="image-20200705135621289"></p>
+<h2 id="6-提交本地框架到线上"><a href="#6-提交本地框架到线上" class="headerlink" title="6.提交本地框架到线上"></a>6.提交本地框架到线上</h2><p>打开生成的hexolog文件夹 右键Git Bash Here 依次输入</p>
+<ol>
+<li>hexo cl //清空缓存</li>
+<li>hexo g &amp;&amp; hexo d //刷新</li>
+<li>hexo s     //提交</li>
+</ol>
+<p>打开自己的仓库名就能看到自己的线上博客了，大功告成!!!</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1831,126 +1941,6 @@
 <li>方便相同权限用户的批量维护</li>
 </ul>
 <p>2、角色的使用需要角色创建者（有权限的就行）激活角色才能使用（关联角色的用户需要重新登录才会生效）</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-GitHub搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
-      <time datetime="2020-07-05T11:53:37.907Z" itemprop="datePublished">2020-07-05</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">GitHub搭建博客</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="如何搭建一个自己喜欢的博客"><a href="#如何搭建一个自己喜欢的博客" class="headerlink" title="如何搭建一个自己喜欢的博客?"></a>如何搭建一个自己喜欢的博客?</h1><h2 id="1-搭建博客前期准备"><a href="#1-搭建博客前期准备" class="headerlink" title="1.搭建博客前期准备"></a>1.搭建博客前期准备</h2><ul>
-<li><h3 id="下载软件-node-地址-https-nodejs-org-en"><a href="#下载软件-node-地址-https-nodejs-org-en" class="headerlink" title="下载软件 node  地址:https://nodejs.org/en/"></a><strong>下载软件 node  地址:<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></strong></h3><p>选择自己对应的版本 不同操作系统对应版本不同 一般选择长期稳定版</p>
-<img src="https://pic.baixiongz.com/2020/07/05/39b7e3e44ad89.png" alt="image-20200705111002447.png" title="image-20200705111002447.png">
-</li>
-<li><h3 id="注册自己的GitHub账号-搭建自己的线上仓库-网址-https-github-com"><a href="#注册自己的GitHub账号-搭建自己的线上仓库-网址-https-github-com" class="headerlink" title="注册自己的GitHub账号   搭建自己的线上仓库  网址:https://github.com/"></a>注册自己的GitHub账号   搭建自己的线上仓库  网址:<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></h3><p>1.注意仓库名 格式 用户名.github.io 例:</p>
-<img src="https://pic.baixiongz.com/2020/07/05/34fa4d3fb72a5.png" alt="image-20200705111233209.png" title="image-20200705111233209.png">
-
-<img src="https://pic.baixiongz.com/2020/07/05/b63ba0ee5ddb4.png" alt="image-20200705125139187.png" title="image-20200705125139187.png">
-
-<p>2.新建测试文件 index.jsp 在浏览器打开README.md地址显示就ok了：</p>
-<img src="https://pic.baixiongz.com/2020/07/05/31355a8165854.png" alt="image-20200705125835835.png" title="image-20200705125835835.png">
-
-<img src="https://pic.baixiongz.com/2020/07/05/41697e051bb74.png" alt="image-20200705125854080.png" title="image-20200705125854080.png">
-
-
-
-</li>
-</ul>
-<ul>
-<li><h3 id="安装本地Git软件-网址-https-git-scm-com-download"><a href="#安装本地Git软件-网址-https-git-scm-com-download" class="headerlink" title="安装本地Git软件  网址:https://git-scm.com/download"></a>安装本地Git软件  网址:<a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a></h3><p>选择自己对应的版本 不同操作系统对应版本不同</p>
-</li>
-</ul>
-<img src="https://pic.baixiongz.com/2020/07/05/9b7b2ff4ebb78.png" alt="image-20200705113722525.png" title="image-20200705113722525.png">
-
-<h2 id="2-检测git-node是否安装成功"><a href="#2-检测git-node是否安装成功" class="headerlink" title="2.检测git/node是否安装成功"></a>2.检测git/node是否安装成功</h2><img src="https://pic.baixiongz.com/2020/07/05/f81b31b957f69.png" alt="image-20200705114531590.png" title="image-20200705114531590.png">
-
-<img src="https://pic.baixiongz.com/2020/07/05/df4aaf17a8ab5.png" alt="image-20200705114623009.png" title="image-20200705114623009.png">
-
-<h2 id="3-安装博客框架（hexo）"><a href="#3-安装博客框架（hexo）" class="headerlink" title="3.安装博客框架（hexo）"></a>3.安装博客框架（hexo）</h2><h4 id="3-1-先在本地-创建一个包-放安装脚本和框架（以后的笔记也是这个包）"><a href="#3-1-先在本地-创建一个包-放安装脚本和框架（以后的笔记也是这个包）" class="headerlink" title="3.1.先在本地 创建一个包 放安装脚本和框架（以后的笔记也是这个包）"></a>3.1.先在本地 创建一个包 放安装脚本和框架（以后的笔记也是这个包）</h4><h4 id="3-2-下载-hexo-script-的安装脚本-网址：https-github-com-kjhuanhao-hexo-script-releases"><a href="#3-2-下载-hexo-script-的安装脚本-网址：https-github-com-kjhuanhao-hexo-script-releases" class="headerlink" title="3.2.下载[hexo-script]的安装脚本  网址：https://github.com/kjhuanhao/hexo-script/releases"></a>3.2.下载[hexo-script]的安装脚本  网址：<a href="https://github.com/kjhuanhao/hexo-script/releases" target="_blank" rel="noopener">https://github.com/kjhuanhao/hexo-script/releases</a></h4><h4 id="3-3-将这个脚本保存到之前创建的包，右键打开Git-Bash-Here-，运行以下命令"><a href="#3-3-将这个脚本保存到之前创建的包，右键打开Git-Bash-Here-，运行以下命令" class="headerlink" title="3.3.将这个脚本保存到之前创建的包，右键打开Git Bash Here ，运行以下命令"></a>3.3.将这个脚本保存到之前创建的包，右键打开Git Bash Here ，运行以下命令</h4><p>source install.sh test_node            （配置环境变量）</p>
-<img src="https://pic.baixiongz.com/2020/07/05/5e6152e688d6d.png" alt="image-20200705192640314.png" title="image-20200705192640314.png">
-
-<h4 id="3-4-一键安装hexo博客-，同样之前创建的包右键打开Git-Bash-Here-，运行以下命令"><a href="#3-4-一键安装hexo博客-，同样之前创建的包右键打开Git-Bash-Here-，运行以下命令" class="headerlink" title="3.4.一键安装hexo博客  ，同样之前创建的包右键打开Git Bash Here ，运行以下命令"></a>3.4.一键安装hexo博客  ，同样之前创建的包右键打开Git Bash Here ，运行以下命令</h4><h4 id="source-install-sh-hexo-win"><a href="#source-install-sh-hexo-win" class="headerlink" title="source install.sh hexo_win"></a>source install.sh hexo_win</h4><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705193128022.png" alt="image-20200705193128022"></p>
-<h4 id="3-5-运行查看博客-到生成的文件hexoblog里面右键依次运行以下命令"><a href="#3-5-运行查看博客-到生成的文件hexoblog里面右键依次运行以下命令" class="headerlink" title="3.5.运行查看博客  到生成的文件hexoblog里面右键依次运行以下命令"></a>3.5.运行查看博客  到生成的文件hexoblog里面右键依次运行以下命令</h4><h4 id="cd-hexoblog"><a href="#cd-hexoblog" class="headerlink" title="cd hexoblog"></a>cd hexoblog</h4><p>hexo s</p>
-<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705193331004.png" alt="image-20200705193331004"></p>
-<h4 id="3-6-在浏览器打开-http-localhost-4000-出现改下页面就下载配置成功了"><a href="#3-6-在浏览器打开-http-localhost-4000-出现改下页面就下载配置成功了" class="headerlink" title="3.6.在浏览器打开 http://localhost:4000 出现改下页面就下载配置成功了"></a>3.6.在浏览器打开 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 出现改下页面就下载配置成功了</h4><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705121323176.png" alt="image-20200705121323176"></p>
-<p>到这一步，恭喜你，博客已经配置一半了！！！</p>
-<h2 id="4-本地git生成公钥添加到线上GitHub账号"><a href="#4-本地git生成公钥添加到线上GitHub账号" class="headerlink" title="4.本地git生成公钥添加到线上GitHub账号"></a>4.本地git生成公钥添加到线上GitHub账号</h2><h3 id="4-1-一键生成SSH秘钥"><a href="#4-1-一键生成SSH秘钥" class="headerlink" title="4.1.一键生成SSH秘钥"></a>4.1.一键生成SSH秘钥</h3><p>——您需要在存放install.sh脚本的目录中,右键打开git bash运行以下命令:</p>
-<p>./install.sh git_ssh</p>
-<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705193802380.png" alt="image-20200705193802380"></p>
-<p>——输入 1</p>
-<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705193926456.png" alt="image-20200705193926456"></p>
-<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705132815535.png" alt="image-20200705132815535"></p>
-<h3 id="4-2去C盘查找并复制公钥"><a href="#4-2去C盘查找并复制公钥" class="headerlink" title="4.2去C盘查找并复制公钥"></a>4.2去C盘查找并复制公钥</h3><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705134208824.png" alt="image-20200705134208824"></p>
-<h3 id="4-3将公钥添加到GitHub账号"><a href="#4-3将公钥添加到GitHub账号" class="headerlink" title="4.3将公钥添加到GitHub账号"></a>4.3将公钥添加到GitHub账号</h3><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705133927399.png" alt="image-20200705133927399"></p>
-<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705134004326.png" alt="image-20200705134004326"></p>
-<h2 id="5-一键部署hexo博客"><a href="#5-一键部署hexo博客" class="headerlink" title="5.一键部署hexo博客"></a>5.一键部署hexo博客</h2><h3 id="5-1您需要在存放install-sh脚本的目录中-右键打开git-bash运行以下命令"><a href="#5-1您需要在存放install-sh脚本的目录中-右键打开git-bash运行以下命令" class="headerlink" title="5.1您需要在存放install.sh脚本的目录中,右键打开git bash运行以下命令:"></a>5.1您需要在存放install.sh脚本的目录中,右键打开git bash运行以下命令:</h3><p>source install.sh deploy</p>
-<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705194141813.png" alt="image-20200705194141813"></p>
-<h3 id="5-2你需要将up-sh复制到hexoblog文件-也就是复制到你的博客根目录下"><a href="#5-2你需要将up-sh复制到hexoblog文件-也就是复制到你的博客根目录下" class="headerlink" title="5.2你需要将up.sh复制到hexoblog文件,也就是复制到你的博客根目录下"></a>5.2你需要将up.sh复制到hexoblog文件,也就是复制到你的博客根目录下</h3><p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705194207925.png" alt="image-20200705194207925"></p>
-<h3 id="5-3在当前页面右键-gitbash-运行以下命令"><a href="#5-3在当前页面右键-gitbash-运行以下命令" class="headerlink" title="5.3在当前页面右键 gitbash 运行以下命令"></a>5.3在当前页面右键 gitbash 运行以下命令</h3><p>source up.sh</p>
-<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705194326401.png" alt="image-20200705194326401"></p>
-<h3 id="5-4部署博客必要的配置"><a href="#5-4部署博客必要的配置" class="headerlink" title="5.4部署博客必要的配置"></a>5.4部署博客必要的配置</h3><p>首先你需要打开根目录配置文件_config.yml</p>
-<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705194359025.png" alt="image-20200705194359025"></p>
-<p>deploy:<br>  type: git<br>  repo: 这里填你的仓库地址,建议使用SSH地址,它是以git开头的<br>  branch: master</p>
-<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705135347417.png" alt="image-20200705135347417"></p>
-<p>2.修改上面</p>
-<p><img src="/2020/07/05/GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200705135621289.png" alt="image-20200705135621289"></p>
-<h2 id="6-提交本地框架到线上"><a href="#6-提交本地框架到线上" class="headerlink" title="6.提交本地框架到线上"></a>6.提交本地框架到线上</h2><p>打开生成的hexolog文件夹 右键Git Bash Here 依次输入</p>
-<ol>
-<li>hexo cl //清空缓存</li>
-<li>hexo g &amp;&amp; hexo d //刷新</li>
-<li>hexo s     //提交</li>
-</ol>
-<p>打开自己的仓库名就能看到自己的线上博客了，大功告成!!!</p>
 
       
     </div>
