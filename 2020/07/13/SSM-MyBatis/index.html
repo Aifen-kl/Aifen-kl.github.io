@@ -449,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-21
+                    2020-07-31
                 </div>
                 
 
@@ -881,7 +881,8 @@
 <p>本质：反思机制实现</p>
 <p>底层：动态代理！</p>
 <p><img src="/2020/07/13/SSM-MyBatis/image-20200713232520618.png" alt="image-20200713232520618"></p>
-<h3 id="2-Mybatis的详细执行过程"><a href="#2-Mybatis的详细执行过程" class="headerlink" title="2.Mybatis的详细执行过程"></a>2.Mybatis的详细执行过程</h3><p><img src="/2020/07/13/SSM-MyBatis/mybatis%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="mybatis流程图"></p>
+<h3 id="2-Mybatis的详细执行过程"><a href="#2-Mybatis的详细执行过程" class="headerlink" title="2.Mybatis的详细执行过程"></a>2.Mybatis的详细执行过程</h3><img src="/2020/07/13/SSM-MyBatis/mybatis流程图.png" alt="mybatis流程图" style="zoom:50%;">
+
 <h3 id="3-CRUD-1"><a href="#3-CRUD-1" class="headerlink" title="3.CRUD"></a>3.CRUD</h3><p>我们可以在工具类创建的时候实现自动提交事物!</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SqlSession <span class="title">getSqlSession</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> sqlSessionFactory.openSession(<span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -906,7 +907,7 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--lombok--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在实体类上加注解即可</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span>:无参构造，get、 set、 tostring、 hashcode, equals</span><br><span class="line"><span class="meta">@A</span>11ArgsConstructor  注解在类，生成包含类中所有字段的构造方法。</span><br><span class="line"><span class="meta">@NoArgsConstructor</span>   注解在类，生成无参的构造方法。</span><br><span class="line"><span class="meta">@Equa</span>1sAndHashCode   注解在类，生成hashCode和equals方法。</span><br><span class="line"><span class="meta">@ToString</span>            注解在类，添加toString方法。 </span><br><span class="line"><span class="meta">@Setter</span> ：            注解在类或字段，注解在类时为所有字段生成setter方法，</span><br><span class="line">                     注解在字段上时只为该字段生成setter方法</span><br><span class="line"><span class="meta">@Getter</span>              使用方法同上，区别在于生成的是getter方法</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span>:无参构造，get、 set、 tostring、 hashcode, equals</span><br><span class="line"><span class="meta">@AllArgsConstructor</span>  注解在类，生成包含类中所有字段的构造方法。</span><br><span class="line"><span class="meta">@NoArgsConstructor</span>   注解在类，生成无参的构造方法。</span><br><span class="line"><span class="meta">@Equa</span>1sAndHashCode   注解在类，生成hashCode和equals方法。</span><br><span class="line"><span class="meta">@ToString</span>            注解在类，添加toString方法。 </span><br><span class="line"><span class="meta">@Setter</span> ：            注解在类或字段，注解在类时为所有字段生成setter方法，</span><br><span class="line">                     注解在字段上时只为该字段生成setter方法</span><br><span class="line"><span class="meta">@Getter</span>              使用方法同上，区别在于生成的是getter方法</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
