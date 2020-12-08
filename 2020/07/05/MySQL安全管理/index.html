@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MySQL安全管理, 矢志不渝">
+    <meta name="keywords" content="MySQL安全管理, HelloWord">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MySQL安全管理 | 矢志不渝</title>
+    <title>MySQL安全管理 | HelloWord</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -41,7 +41,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">矢志不渝</span>
+                    <span class="logo-span">HelloWord</span>
                 </a>
             </div>
             
@@ -140,7 +140,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">矢志不渝</div>
+        <div class="logo-name">HelloWord</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -533,12 +533,12 @@
 <p>示例</p>
 </blockquote>
 <p>1、创建专业表和学生表，学生表中的专业id指向专业表id</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">create table t_47(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null unique</span><br><span class="line">)charset utf8;</span><br><span class="line"></span><br><span class="line">create table t_48(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    c_id int comment &#39;指向t_46表中的id主键&#39;,</span><br><span class="line">    constraint &#96;c_id&#96; foreign key(c_id) references t_47(id)</span><br><span class="line">)charset utf8;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create table t_47(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null unique</span><br><span class="line">)charset utf8;</span><br><span class="line"></span><br><span class="line">create table t_48(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    c_id int comment &#39;指向t_46表中的id主键&#39;,</span><br><span class="line">    constraint &#96;c_id&#96; foreign key(c_id) references t_47(id)</span><br><span class="line">)charset utf8;</span><br></pre></td></tr></table></figure>
 
 
 
 <p>2、外键可以不指定名字，系统会自动生成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table t_49(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    c_id int,</span><br><span class="line">    foreign key(c_id) references t_47(id)</span><br><span class="line">)charset utf8;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create table t_49(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    c_id int,</span><br><span class="line">    foreign key(c_id) references t_47(id)</span><br><span class="line">)charset utf8;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -589,12 +589,12 @@
 <p>示例</p>
 </blockquote>
 <p>1、子表不能插入主表不存在的数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into t_48 values(null,&#39;Tony&#39;,2);	# 错误</span><br><span class="line"></span><br><span class="line">insert into t_47 values(null,&#39;English&#39;);</span><br><span class="line">insert into t_48 values(null,&#39;Peny&#39;,1);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">insert into t_48 values(null,&#39;Tony&#39;,2);	# 错误</span><br><span class="line"></span><br><span class="line">insert into t_47 values(null,&#39;English&#39;);</span><br><span class="line">insert into t_48 values(null,&#39;Peny&#39;,1);</span><br></pre></td></tr></table></figure>
 
 
 
 <p>2、默认的外键产生后，主键不能更新被关联的主键字段或者删除被关联的主键记录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 错误</span><br><span class="line">update t_47 set id &#x3D; 2;</span><br><span class="line">delete from t_47 where id &#x3D; 1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 错误</span><br><span class="line">update t_47 set id &#x3D; 2;</span><br><span class="line">delete from t_47 where id &#x3D; 1;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -603,7 +603,7 @@
 <li>on update cascade：更新级联</li>
 <li>on delete set null：删除置空</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">create table t_50(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null unique</span><br><span class="line">)charset utf8;</span><br><span class="line"></span><br><span class="line">create table t_51(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    c_id int, # 如果要允许置空，就不能not null</span><br><span class="line">    foreign key(c_id) references t_50(id) on update cascade on delete set null</span><br><span class="line">)charset utf8;</span><br><span class="line"></span><br><span class="line">insert into t_50 values(null,&#39;Chinese&#39;),(null,&#39;Computer&#39;);</span><br><span class="line">insert into t_51 values(null,&#39;Tony&#39;,1),(null,&#39;Petter&#39;,2);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create table t_50(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null unique</span><br><span class="line">)charset utf8;</span><br><span class="line"></span><br><span class="line">create table t_51(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    c_id int, # 如果要允许置空，就不能not null</span><br><span class="line">    foreign key(c_id) references t_50(id) on update cascade on delete set null</span><br><span class="line">)charset utf8;</span><br><span class="line"></span><br><span class="line">insert into t_50 values(null,&#39;Chinese&#39;),(null,&#39;Computer&#39;);</span><br><span class="line">insert into t_51 values(null,&#39;Tony&#39;,1),(null,&#39;Petter&#39;,2);</span><br></pre></td></tr></table></figure>
 
 
 
@@ -611,17 +611,17 @@
 <li>子表依然不允许插入父表不存在的外键</li>
 <li>但是可以插入外键为Null的数据</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 错误</span><br><span class="line">insert into t_51 values(null,&#39;Lilei&#39;,3);</span><br><span class="line"></span><br><span class="line">insert into t_51 values(null,&#39;Lilei&#39;,NULL); # OK</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 错误</span><br><span class="line">insert into t_51 values(null,&#39;Lilei&#39;,3);</span><br><span class="line"></span><br><span class="line">insert into t_51 values(null,&#39;Lilei&#39;,NULL); # OK</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>父表的更新（主键）会让关联的外键自动级联更新</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update t_50 set id &#x3D; 3 where id &#x3D; 1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update t_50 set id &#x3D; 3 where id &#x3D; 1;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>父表的删除会让关联的外键自动自动置空</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from t_50 where id &#x3D; 3;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">delete from t_50 where id &#x3D; 3;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -653,12 +653,12 @@
 <ul>
 <li>新增外键</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add [constraint &#96;外建名&#96;] foreign key(外键字段) references 表名(主键) [on 外键约束]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alter table 表名 add [constraint &#96;外建名&#96;] foreign key(外键字段) references 表名(主键) [on 外键约束]</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>删除外键</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop foreign key 外键名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alter table 表名 drop foreign key 外键名;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>更新外键：先删除后新增</li>
@@ -667,12 +667,12 @@
 <p>示例</p>
 </blockquote>
 <p>1、删除外键</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table t_51 drop foreign key t_51_ibfk_1;	# 系统生成的外键</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alter table t_51 drop foreign key t_51_ibfk_1;	# 系统生成的外键</span><br></pre></td></tr></table></figure>
 
 
 
 <p>2、追加外键</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table t_51 add constraint &#96;t_51_50&#96; foreign key(c_id) references t_50(id);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alter table t_51 add constraint &#96;t_51_50&#96; foreign key(c_id) references t_50(id);</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>注意：追加外键需要保证外键字段里的值要么为Null，要么在父表中都能找到</li>
@@ -713,12 +713,12 @@
 </blockquote>
 <p>银行转账：从A账户转账到B账户</p>
 <p>创建数据表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table t_52(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    account decimal(10,2) default 0.00</span><br><span class="line">)charset utf8;</span><br><span class="line"></span><br><span class="line">insert into t_52 values(null,&#39;Tom&#39;,10000),(null,&#39;Lucy&#39;,100);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create table t_52(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    account decimal(10,2) default 0.00</span><br><span class="line">)charset utf8;</span><br><span class="line"></span><br><span class="line">insert into t_52 values(null,&#39;Tom&#39;,10000),(null,&#39;Lucy&#39;,100);</span><br></pre></td></tr></table></figure>
 
 
 
 <p>转账：Tom向Lucy转账，一定是分为两步</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Tom扣钱</span><br><span class="line">update t_52 set account &#x3D; account - 1000 where id &#x3D; 1;</span><br><span class="line"></span><br><span class="line"># Lucy收钱</span><br><span class="line">update t_52 set account &#x3D; account + 1000 where id &#x3D; 2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Tom扣钱</span><br><span class="line">update t_52 set account &#x3D; account - 1000 where id &#x3D; 1;</span><br><span class="line"></span><br><span class="line"># Lucy收钱</span><br><span class="line">update t_52 set account &#x3D; account + 1000 where id &#x3D; 2;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>以上两步必须都成功转账才能叫成功</li>
@@ -730,7 +730,7 @@
 </blockquote>
 <p>事务安全是在操作前告知系统，接下来所有的操作都暂<strong>不同步到数据表</strong>，而是记录到<strong>事务日志</strong>，指导后续所有操作都成功，再进行同步；否则取消所有操作</p>
 <p>以上述转账为例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(转账开始)--&gt;B[开启事务]</span><br><span class="line">B--&gt;C&#123;事务1:Tom转出1000&#125;</span><br><span class="line">C--&gt;|成功|D[记录到事务日志]</span><br><span class="line">C--&gt;|失败|G</span><br><span class="line">D--&gt;E&#123;事务2:Lucy转入1000&#125;</span><br><span class="line">D--&gt;|失败|G</span><br><span class="line">E--&gt;|成功|F[记录到事务日志]</span><br><span class="line">F--&gt;G[关闭事务&lt;br&gt;成功:提交事务 同步到数据表\清除事务日志&lt;br&gt;失败:回滚事务 清除事务日志]</span><br><span class="line">G--&gt;H((结束))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(转账开始)--&gt;B[开启事务]</span><br><span class="line">B--&gt;C&#123;事务1:Tom转出1000&#125;</span><br><span class="line">C--&gt;|成功|D[记录到事务日志]</span><br><span class="line">C--&gt;|失败|G</span><br><span class="line">D--&gt;E&#123;事务2:Lucy转入1000&#125;</span><br><span class="line">D--&gt;|失败|G</span><br><span class="line">E--&gt;|成功|F[记录到事务日志]</span><br><span class="line">F--&gt;G[关闭事务&lt;br&gt;成功:提交事务 同步到数据表\清除事务日志&lt;br&gt;失败:回滚事务 清除事务日志]</span><br><span class="line">G--&gt;H((结束))</span><br></pre></td></tr></table></figure>
 
 
 
@@ -785,12 +785,12 @@
 <p>示例</p>
 </blockquote>
 <p>1、手动事务：启用事务转账，成功提交事务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 开启事务</span><br><span class="line">start transaction;</span><br><span class="line"></span><br><span class="line"># Tom扣钱</span><br><span class="line">update t_52 set account &#x3D; account - 1000 where id  &#x3D; 1;</span><br><span class="line"></span><br><span class="line"># Lucy收钱</span><br><span class="line">update t_52 set account &#x3D; account + 1000 where id  &#x3D; 2;</span><br><span class="line"></span><br><span class="line"># 提交事务</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 开启事务</span><br><span class="line">start transaction;</span><br><span class="line"></span><br><span class="line"># Tom扣钱</span><br><span class="line">update t_52 set account &#x3D; account - 1000 where id  &#x3D; 1;</span><br><span class="line"></span><br><span class="line"># Lucy收钱</span><br><span class="line">update t_52 set account &#x3D; account + 1000 where id  &#x3D; 2;</span><br><span class="line"></span><br><span class="line"># 提交事务</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
 
 
 
 <p>2、手动事务：启用事务转账，成功提交事务（回滚点）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 开启事务</span><br><span class="line">start transaction;</span><br><span class="line"></span><br><span class="line"># Tom扣钱</span><br><span class="line">update t_52 set account &#x3D; account - 1000 where id&#x3D; 1;</span><br><span class="line"></span><br><span class="line"># 设置回滚点</span><br><span class="line">savepoint sp1;</span><br><span class="line"></span><br><span class="line"># Lucy收钱</span><br><span class="line">update t_52 set account &#x3D; account + 10000 where id&#x3D; 2;</span><br><span class="line"></span><br><span class="line"># 操作失败回到回滚点</span><br><span class="line">rollback to sp1;</span><br><span class="line"></span><br><span class="line"># Lucy收钱</span><br><span class="line">update t_52 set account &#x3D; account + 1000 where id&#x3D; 2;</span><br><span class="line"></span><br><span class="line"># 提交事务</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 开启事务</span><br><span class="line">start transaction;</span><br><span class="line"></span><br><span class="line"># Tom扣钱</span><br><span class="line">update t_52 set account &#x3D; account - 1000 where id&#x3D; 1;</span><br><span class="line"></span><br><span class="line"># 设置回滚点</span><br><span class="line">savepoint sp1;</span><br><span class="line"></span><br><span class="line"># Lucy收钱</span><br><span class="line">update t_52 set account &#x3D; account + 10000 where id&#x3D; 2;</span><br><span class="line"></span><br><span class="line"># 操作失败回到回滚点</span><br><span class="line">rollback to sp1;</span><br><span class="line"></span><br><span class="line"># Lucy收钱</span><br><span class="line">update t_52 set account &#x3D; account + 1000 where id&#x3D; 2;</span><br><span class="line"></span><br><span class="line"># 提交事务</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -798,17 +798,17 @@
 <ul>
 <li>Mysql默认是自动提交事务的：所以事务一旦发生就会立即写入到数据表（不能多个事务一起完成任务）</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#39;autocommit&#39;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show variables like &#39;autocommit&#39;;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>关闭自动提交事务（当前设置级别用户级：当前用户档次连接有效）</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set autocommit &#x3D; 0;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set autocommit &#x3D; 0;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>手动提交事务</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into t_52 values(null,&#39;Liu&#39;,1000);</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">insert into t_52 values(null,&#39;Liu&#39;,1000);</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -887,7 +887,7 @@
 <p>示例</p>
 </blockquote>
 <p>1、查询学生的SQL指令需要重复执行很多次</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 普通操作</span><br><span class="line">select * from t_42;</span><br><span class="line"></span><br><span class="line"># 预处理操作：发送预处理</span><br><span class="line">prepare p1 from &#39;select * from t_42&#39;;</span><br><span class="line"></span><br><span class="line"># 预处理操作：执行预处理</span><br><span class="line">execute p1;</span><br><span class="line"></span><br><span class="line"># 删除预处理</span><br><span class="line">deallocate  prepare p1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 普通操作</span><br><span class="line">select * from t_42;</span><br><span class="line"></span><br><span class="line"># 预处理操作：发送预处理</span><br><span class="line">prepare p1 from &#39;select * from t_42&#39;;</span><br><span class="line"></span><br><span class="line"># 预处理操作：执行预处理</span><br><span class="line">execute p1;</span><br><span class="line"></span><br><span class="line"># 删除预处理</span><br><span class="line">deallocate  prepare p1;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -895,7 +895,7 @@
 <p>预处理原理</p>
 </blockquote>
 <p>普通处理和预处理对比</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(普通处理)--&gt;B[接收SQL指令]</span><br><span class="line">B--&gt;C[编译SQL]</span><br><span class="line">C--&gt;D[执行SQL]</span><br><span class="line">D--&gt;E((返回结果))</span><br><span class="line"></span><br><span class="line">A1(预处理)--&gt;B1[接收预处理指令]</span><br><span class="line">B1--&gt;C1[编译预处理指令]</span><br><span class="line">C1--&gt;D1&#123;是否执行&#125;</span><br><span class="line">D1--&gt;|execute&lt;br&gt;以后都不需要执行接收SQL和编译SQL|E1[执行SQL&lt;br&gt;可重复执行]</span><br><span class="line">D1--&gt;|不执行|F1</span><br><span class="line">E1--&gt;F1((返回结果))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(普通处理)--&gt;B[接收SQL指令]</span><br><span class="line">B--&gt;C[编译SQL]</span><br><span class="line">C--&gt;D[执行SQL]</span><br><span class="line">D--&gt;E((返回结果))</span><br><span class="line"></span><br><span class="line">A1(预处理)--&gt;B1[接收预处理指令]</span><br><span class="line">B1--&gt;C1[编译预处理指令]</span><br><span class="line">C1--&gt;D1&#123;是否执行&#125;</span><br><span class="line">D1--&gt;|execute&lt;br&gt;以后都不需要执行接收SQL和编译SQL|E1[执行SQL&lt;br&gt;可重复执行]</span><br><span class="line">D1--&gt;|不执行|F1</span><br><span class="line">E1--&gt;F1((返回结果))</span><br></pre></td></tr></table></figure>
 
 
 
@@ -936,18 +936,18 @@
 <ul>
 <li>可变数据的位置使用占位符 <code>?</code> 占位</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prepare 预处理名字 from &#96;预处理指令 变化部分使用?替代&#96;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">prepare 预处理名字 from &#96;预处理指令 变化部分使用?替代&#96;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在执行预处理的时候将实际数据传进去代替占位符执行SQL</p>
 <ul>
 <li>数据存储到变量（预处理传入的值必须是变量保存的）</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set @变量名 &#x3D; 值</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set @变量名 &#x3D; 值</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>使用using关键字传参</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">execute 预处理名字 using @变量名</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">execute 预处理名字 using @变量名</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>数据传入的顺序与预处理中占位符的顺序一致</li>
@@ -965,7 +965,7 @@
 <p>示例</p>
 </blockquote>
 <p>向t_40表中插入数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 准备预处理：涉及参数</span><br><span class="line">prepare t_40_insert from &#39;insert into t_40 values(null,?,?,?,?)&#39;;</span><br><span class="line"></span><br><span class="line"># 设置变量并传入参数</span><br><span class="line">set @name &#x3D; &#39;药师兜&#39;;</span><br><span class="line">set @gender &#x3D; &#39;男&#39;;</span><br><span class="line">set @age &#x3D; 23;</span><br><span class="line">set @class_name &#x3D; &#39;木叶1班&#39;;</span><br><span class="line"></span><br><span class="line"># 执行预处理</span><br><span class="line">execute t_40_insert using @name,@gender,@age,@class_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 准备预处理：涉及参数</span><br><span class="line">prepare t_40_insert from &#39;insert into t_40 values(null,?,?,?,?)&#39;;</span><br><span class="line"></span><br><span class="line"># 设置变量并传入参数</span><br><span class="line">set @name &#x3D; &#39;药师兜&#39;;</span><br><span class="line">set @gender &#x3D; &#39;男&#39;;</span><br><span class="line">set @age &#x3D; 23;</span><br><span class="line">set @class_name &#x3D; &#39;木叶1班&#39;;</span><br><span class="line"></span><br><span class="line"># 执行预处理</span><br><span class="line">execute t_40_insert using @name,@gender,@age,@class_name;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -997,7 +997,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 创建视图</span><br><span class="line">create view 视图名字 as select指令;</span><br><span class="line"></span><br><span class="line"># 访问视图：一般都是查询</span><br><span class="line">select *&#x2F;字段名 from 视图名字;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 创建视图</span><br><span class="line">create view 视图名字 as select指令;</span><br><span class="line"></span><br><span class="line"># 访问视图：一般都是查询</span><br><span class="line">select *&#x2F;字段名 from 视图名字;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>视图有结构，但不存储数据<ul>
@@ -1019,12 +1019,12 @@
 <p>示例</p>
 </blockquote>
 <p>1、需要对外提供一个学生详情的数据，经常使用：可以利用视图实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 对外提供数据，要保护数据本身的安全</span><br><span class="line"># 需要长期使用</span><br><span class="line"></span><br><span class="line"># 创建视图</span><br><span class="line">create view v_student_info as select * from t_45 left join t_46 using(c_id);</span><br><span class="line"># 使用视图：像表一样使用</span><br><span class="line">select * from v_student_info;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 对外提供数据，要保护数据本身的安全</span><br><span class="line"># 需要长期使用</span><br><span class="line"></span><br><span class="line"># 创建视图</span><br><span class="line">create view v_student_info as select * from t_45 left join t_46 using(c_id);</span><br><span class="line"># 使用视图：像表一样使用</span><br><span class="line">select * from v_student_info;</span><br></pre></td></tr></table></figure>
 
 
 
 <p>2、有些复杂的SQL又是经常用到的，如多张表的连表操作：可以利用视图实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"># 院系表</span><br><span class="line">create table t_53(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null</span><br><span class="line">)charset utf8;</span><br><span class="line">insert into t_53 values(null,&#39;语言系&#39;),(null,&#39;考古系&#39;);</span><br><span class="line"></span><br><span class="line"># 专业表</span><br><span class="line">create table t_54(</span><br><span class="line">    id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    s_id int not null comment &#39;学院id&#39;</span><br><span class="line">)charset utf8;</span><br><span class="line">insert into t_54 values(null,&#39;English&#39;,1),(null,&#39;Chinese&#39;,1);</span><br><span class="line"></span><br><span class="line"># 学生表</span><br><span class="line">create table t_55(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    s_id int not null comment &#39;专业Id&#39;</span><br><span class="line">)charset utf8;</span><br><span class="line">insert into t_55 values(null,&#39;Lilei&#39;,2),(null,&#39;Mark&#39;,2),(null,&#39;Tony&#39;,1);</span><br><span class="line"></span><br><span class="line"># 获取所有学生的明细信息</span><br><span class="line">select stu.*,sub.name as sub_name,sub.s_id as sch_id,sch.name as sch_name from t_55 as stu left join t_54 sub on stu.s_id &#x3D; sub.id left join t_53 sch on sub.s_id &#x3D; sch.id;</span><br><span class="line"></span><br><span class="line"># 以视图保存这类复杂指令，后续可以直接访问视图</span><br><span class="line">create view v_student_detail as select stu.*,sub.name as sub_name,sub.s_id as sch_id,sch.name as sch_name from t_55 as stu left join t_54 sub on stu.s_id &#x3D; sub.id left join t_53 sch on sub.s_id &#x3D; sch.id;</span><br><span class="line"></span><br><span class="line">select * from v_student_detail;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 院系表</span><br><span class="line">create table t_53(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null</span><br><span class="line">)charset utf8;</span><br><span class="line">insert into t_53 values(null,&#39;语言系&#39;),(null,&#39;考古系&#39;);</span><br><span class="line"></span><br><span class="line"># 专业表</span><br><span class="line">create table t_54(</span><br><span class="line">    id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    s_id int not null comment &#39;学院id&#39;</span><br><span class="line">)charset utf8;</span><br><span class="line">insert into t_54 values(null,&#39;English&#39;,1),(null,&#39;Chinese&#39;,1);</span><br><span class="line"></span><br><span class="line"># 学生表</span><br><span class="line">create table t_55(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">    name varchar(50) not null,</span><br><span class="line">    s_id int not null comment &#39;专业Id&#39;</span><br><span class="line">)charset utf8;</span><br><span class="line">insert into t_55 values(null,&#39;Lilei&#39;,2),(null,&#39;Mark&#39;,2),(null,&#39;Tony&#39;,1);</span><br><span class="line"></span><br><span class="line"># 获取所有学生的明细信息</span><br><span class="line">select stu.*,sub.name as sub_name,sub.s_id as sch_id,sch.name as sch_name from t_55 as stu left join t_54 sub on stu.s_id &#x3D; sub.id left join t_53 sch on sub.s_id &#x3D; sch.id;</span><br><span class="line"></span><br><span class="line"># 以视图保存这类复杂指令，后续可以直接访问视图</span><br><span class="line">create view v_student_detail as select stu.*,sub.name as sub_name,sub.s_id as sch_id,sch.name as sch_name from t_55 as stu left join t_54 sub on stu.s_id &#x3D; sub.id left join t_53 sch on sub.s_id &#x3D; sch.id;</span><br><span class="line"></span><br><span class="line">select * from v_student_detail;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1051,17 +1051,17 @@
 <ul>
 <li>视图查看：显示视图结构和具体视图信息</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">show tables;	# 查看全部视图</span><br><span class="line">show create table&#x2F;view 视图名字;	# 查看视图创建指令</span><br><span class="line">desc 视图名字;	 # 查看视图结构</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show tables;	# 查看全部视图</span><br><span class="line">show create table&#x2F;view 视图名字;	# 查看视图创建指令</span><br><span class="line">desc 视图名字;	 # 查看视图结构</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>视图修改：更改视图逻辑</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 更改视图</span><br><span class="line">alter view 视图名 as 新的查询指令;</span><br><span class="line">create or replace view 视图名 as 新的查询指令;	# 创建新的或者替换新的</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 更改视图</span><br><span class="line">alter view 视图名 as 新的查询指令;</span><br><span class="line">create or replace view 视图名 as 新的查询指令;	# 创建新的或者替换新的</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>视图删除</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop view 视图名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">drop view 视图名;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1071,17 +1071,17 @@
 <p>示例</p>
 </blockquote>
 <p>1、查看全部视图和视图明细</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">show tables;	# 查看全部表，包括视图</span><br><span class="line">desc v_student_detail;	# 查看视图结构</span><br><span class="line">show create view v_student_detail;	# 查看视图创建明细</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show tables;	# 查看全部表，包括视图</span><br><span class="line">desc v_student_detail;	# 查看视图结构</span><br><span class="line">show create view v_student_detail;	# 查看视图创建明细</span><br></pre></td></tr></table></figure>
 
 
 
 <p>2、修改视图：重置视图数据逻辑</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter view v_student_info as select t1.s_name,t2.c_name from t_45 t1 left join t_46 t2 using(c_id);</span><br><span class="line">create or replace view v_student_info as select t1.s_name,t2.c_name from t_45 t1 left join t_46 t2 using(c_id);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alter view v_student_info as select t1.s_name,t2.c_name from t_45 t1 left join t_46 t2 using(c_id);</span><br><span class="line">create or replace view v_student_info as select t1.s_name,t2.c_name from t_45 t1 left join t_46 t2 using(c_id);</span><br></pre></td></tr></table></figure>
 
 
 
 <p>3、删除视图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop view v_student_info;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">drop view v_student_info;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1128,22 +1128,22 @@
 <p>示例</p>
 </blockquote>
 <p>1、增加一个单表视图和多表视图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create view v_student_1 as select s_id,s_name from t_45;</span><br><span class="line">create view v_student_2 as select s.*,c.c_name from t_45 s left join t_46 c using(c_id);</span><br><span class="line">create or replace view v_student_3 as select * from t_45 where c_id is not null with check option;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create view v_student_1 as select s_id,s_name from t_45;</span><br><span class="line">create view v_student_2 as select s.*,c.c_name from t_45 s left join t_46 c using(c_id);</span><br><span class="line">create or replace view v_student_3 as select * from t_45 where c_id is not null with check option;</span><br></pre></td></tr></table></figure>
 
 
 
 <p>2、新增数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into v_student_1 values(null,&#39;student7&#39;);	# 正确：视图包含所有必有字段</span><br><span class="line">insert into v_student_2 values(null,&#39;student8&#39;,null,null); # 错误：不可插入</span><br><span class="line">insert into v_student_3 values(null,&#39;student8&#39;,null);	# 错误：check option，因为第三个字段c_id为NULL，不符合视图筛选条件，查不出来</span><br><span class="line">insert into v_student_3 values(null,&#39;Student9&#39;,1);	# 正确</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">insert into v_student_1 values(null,&#39;student7&#39;);	# 正确：视图包含所有必有字段</span><br><span class="line">insert into v_student_2 values(null,&#39;student8&#39;,null,null); # 错误：不可插入</span><br><span class="line">insert into v_student_3 values(null,&#39;student8&#39;,null);	# 错误：check option，因为第三个字段c_id为NULL，不符合视图筛选条件，查不出来</span><br><span class="line">insert into v_student_3 values(null,&#39;Student9&#39;,1);	# 正确</span><br></pre></td></tr></table></figure>
 
 
 
 <p>3、更新数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">update v_student_1 set s_name &#x3D; &#39;boy&#39; where s_id &#x3D; 8;</span><br><span class="line">update v_student_2 set s_name &#x3D; &#39;boy&#39; where s_id &#x3D; 7; # 错误：不可修改</span><br><span class="line">update v_student_3 set c_id &#x3D; null where s_id &#x3D; 1;	  # 错误：check option，修改后c_id为null，变得不符合视图筛选条件了</span><br><span class="line">update v_student_3 set s_name &#x3D; &#39;boy&#39; where s_id &#x3D; 1; # 正确</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update v_student_1 set s_name &#x3D; &#39;boy&#39; where s_id &#x3D; 8;</span><br><span class="line">update v_student_2 set s_name &#x3D; &#39;boy&#39; where s_id &#x3D; 7; # 错误：不可修改</span><br><span class="line">update v_student_3 set c_id &#x3D; null where s_id &#x3D; 1;	  # 错误：check option，修改后c_id为null，变得不符合视图筛选条件了</span><br><span class="line">update v_student_3 set s_name &#x3D; &#39;boy&#39; where s_id &#x3D; 1; # 正确</span><br></pre></td></tr></table></figure>
 
 
 
 <p>4、删除数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">delete from v_student_1 where s_id &#x3D; 2;</span><br><span class="line">delete from v_student_2 where s_id &#x3D; 3;	# 错误：不可删除</span><br><span class="line">delete from v_student_3 where s_id &#x3D; 1;	# 可以删除，说明with check option不影响删除操作</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">delete from v_student_1 where s_id &#x3D; 2;</span><br><span class="line">delete from v_student_2 where s_id &#x3D; 3;	# 错误：不可删除</span><br><span class="line">delete from v_student_3 where s_id &#x3D; 1;	# 可以删除，说明with check option不影响删除操作</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1173,7 +1173,7 @@
 <ul>
 <li>视图算法在创建视图时指定</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create ALGORITHM &#x3D; 算法 view 视图名字 as select指令;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create ALGORITHM &#x3D; 算法 view 视图名字 as select指令;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>视图算法一共有三种<ul>
@@ -1193,17 +1193,17 @@
 <p>示例</p>
 </blockquote>
 <p>1、创建三种不同算法视图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create algorithm &#x3D; undefined view v_student_4 as select * from t_42 order by age desc;</span><br><span class="line">create algorithm &#x3D; merge view v_student_5 as select * from t_42 order by age desc;</span><br><span class="line">create algorithm &#x3D; temptable view v_student_6 as select * from t_42 order by age desc;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create algorithm &#x3D; undefined view v_student_4 as select * from t_42 order by age desc;</span><br><span class="line">create algorithm &#x3D; merge view v_student_5 as select * from t_42 order by age desc;</span><br><span class="line">create algorithm &#x3D; temptable view v_student_6 as select * from t_42 order by age desc;</span><br></pre></td></tr></table></figure>
 
 
 
 <p>2、使用视图：为了体现算法效果，给视图增加分组效果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select count(*),any_value(name),any_value(age),class_name,max(age) from v_student_4 group by class_name;</span><br><span class="line">select count(*),any_value(name),any_value(age),class_name,max(age) from v_student_5 group by class_name;</span><br><span class="line">select count(*),any_value(name),any_value(age),class_name,max(age) from v_student_6 group by class_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select count(*),any_value(name),any_value(age),class_name,max(age) from v_student_4 group by class_name;</span><br><span class="line">select count(*),any_value(name),any_value(age),class_name,max(age) from v_student_5 group by class_name;</span><br><span class="line">select count(*),any_value(name),any_value(age),class_name,max(age) from v_student_6 group by class_name;</span><br></pre></td></tr></table></figure>
 
 
 
 <p>3、临时表算法的视图不能进行数据插入操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into v_student_6 values(null,&#39;冥加&#39;,&#39;男&#39;,100,&#39;神妖1班&#39;); # 错误：不可插入</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">insert into v_student_6 values(null,&#39;冥加&#39;,&#39;男&#39;,100,&#39;神妖1班&#39;); # 错误：不可插入</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1276,7 +1276,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select 字段列表|*  into outfile 外部文件路径 </span><br><span class="line">	[fields terminated by 格式 enclosed by 格式]</span><br><span class="line">	[lines terminated by 格式 starting by 格式]</span><br><span class="line">from 数据表;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select 字段列表|*  into outfile 外部文件路径 </span><br><span class="line">	[fields terminated by 格式 enclosed by 格式]</span><br><span class="line">	[lines terminated by 格式 starting by 格式]</span><br><span class="line">from 数据表;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>表数据备份不限定数据的来源是一张表还是多张表（可以连表）</li>
@@ -1295,18 +1295,18 @@
 <p>示例</p>
 </blockquote>
 <p>1、将t_40表的数据按照默认的方式导出到文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * into outfile  &#39;D:&#x2F;t_40.csv&#39; from t_40;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * into outfile  &#39;D:&#x2F;t_40.csv&#39; from t_40;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>如果系统提示：secure-file-priv问题，说明配置没有允许进行文件的导入导出。需要在配置文件里（my.ini）配置好这个配置项：secure-file-priv = 数据导入导出路径/不指定值（重启MySQL生效）</li>
 </ul>
 <p>2、将t_40表的数据按照指定格式导出到文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select name,gender,age,class_name into outfile &#39;D:&#x2F;t_40_self.csv&#39;</span><br><span class="line">	fields terminated by &#39;-&#39; enclosed by &#39;&quot;&#39;</span><br><span class="line">	lines starting by &#39;GO:&#39;</span><br><span class="line">from t_40;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select name,gender,age,class_name into outfile &#39;D:&#x2F;t_40_self.csv&#39;</span><br><span class="line">	fields terminated by &#39;-&#39; enclosed by &#39;&quot;&#39;</span><br><span class="line">	lines starting by &#39;GO:&#39;</span><br><span class="line">from t_40;</span><br></pre></td></tr></table></figure>
 
 
 
 <p>3、多表数据导出：t_45连接t_46表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * into outfile &#39;D:&#x2F;t_45_46.csv&#39; from t_45 left join t_46 using(c_id);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * into outfile &#39;D:&#x2F;t_45_46.csv&#39; from t_45 left join t_46 using(c_id);</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1336,7 +1336,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">load data infile &#39;数据文件所在路径&#39; into table 表名</span><br><span class="line">	[fields terminated by 格式 enclosed by 格式]</span><br><span class="line">	[lines terminated by 格式 starting by 格式]</span><br><span class="line">	[(字段列表)];	# 如果是部分表字段，那么必须将字段列表放到最后</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">load data infile &#39;数据文件所在路径&#39; into table 表名</span><br><span class="line">	[fields terminated by 格式 enclosed by 格式]</span><br><span class="line">	[lines terminated by 格式 starting by 格式]</span><br><span class="line">	[(字段列表)];	# 如果是部分表字段，那么必须将字段列表放到最后</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>数据文件来源<ul>
@@ -1359,11 +1359,11 @@
 <p>示例</p>
 </blockquote>
 <p>1、将t_40.csv数据导入到db_3数据库中的一个与t_40表结构一致的表中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create table t_40 like db_2.t_40;</span><br><span class="line"></span><br><span class="line">load data infile &#39;D:&#x2F;t_40.csv&#39; into table t_40; # 有可能因为字符集出现问题           </span><br><span class="line">load data infile &#39;D:&#x2F;t_40.csv&#39; into table t_40 charset utf8;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create table t_40 like db_2.t_40;</span><br><span class="line"></span><br><span class="line">load data infile &#39;D:&#x2F;t_40.csv&#39; into table t_40; # 有可能因为字符集出现问题           </span><br><span class="line">load data infile &#39;D:&#x2F;t_40.csv&#39; into table t_40 charset utf8;</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意</strong>：数据加载的时候需要注意外部数据的字符集，在加载的时候需要指定字符集为外部文件数据格式，在表后增加字符集<code>charset 外部文件数据字符集</code></p>
 <p>2、将t_40_self文件里的数据导入到db_3.t_40表中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load data infile &#39;D:&#x2F;t_40_self.csv&#39; into table t_40 charset utf8 fields terminated by &#39;-&#39; enclosed by &#39;&quot;&#39; lines starting by &#39;GO:&#39; (name,gender,age,class_name) ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">load data infile &#39;D:&#x2F;t_40_self.csv&#39; into table t_40 charset utf8 fields terminated by &#39;-&#39; enclosed by &#39;&quot;&#39; lines starting by &#39;GO:&#39; (name,gender,age,class_name) ;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1526,7 +1526,7 @@
 <ul>
 <li>SQL还原可以在进入到数据库之后利用SQL指令还原</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source SQL文件路径;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source SQL文件路径;</span><br></pre></td></tr></table></figure>
 
 <p><code>备份数据库:mysqldump  -uroot -p 要备份的数据库名&gt; E:\aMySQL\text1.sql</code></p>
 <p><code>还原自测 mysql -u root -p 指定存数据的数据库名 &lt; E:\aMySQL\tenement.sql</code></p>
@@ -1550,7 +1550,7 @@
 </ul>
 <p><code>mysql.exe -uroot -p db_2 &lt; D:/t_40_42.sql</code></p>
 <p>2、在进入数据库之后，使用source指令还原SQL备份（通常针对表）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source D:&#x2F;t_40_42.sql;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source D:&#x2F;t_40_42.sql;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1612,12 +1612,12 @@
 <p>示例</p>
 </blockquote>
 <p>1、根据项目情况，跟不同的项目组创建不同的账号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># A团队只允许在公司访问服务器，公司IP为163.177.151.110</span><br><span class="line">create user &#96;admin&#96;@&#96;163.177.151.110&#96; identified by &#39;admin123&#39;;</span><br><span class="line"></span><br><span class="line"># B团队不限定负责数据库管理，不限定工作地点</span><br><span class="line">create user &#96;admin&#96; identified by &#39;admin321&#39;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># A团队只允许在公司访问服务器，公司IP为163.177.151.110</span><br><span class="line">create user &#96;admin&#96;@&#96;163.177.151.110&#96; identified by &#39;admin123&#39;;</span><br><span class="line"></span><br><span class="line"># B团队不限定负责数据库管理，不限定工作地点</span><br><span class="line">create user &#96;admin&#96; identified by &#39;admin321&#39;;</span><br></pre></td></tr></table></figure>
 
 
 
 <p>2、开发任务结束，A团队的任务已经完成，不需要进行数据库操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user &#96;admin&#96;@&#96;163.177.151.110&#96;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">drop user &#96;admin&#96;@&#96;163.177.151.110&#96;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1841,17 +1841,17 @@
 <p>示例</p>
 </blockquote>
 <p>1、给用户admin@localhost分配权限：db_2下所有表的所有权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create user &#96;admin&#96;@&#96;localhost&#96; identified by &#39;123456&#39;;</span><br><span class="line">grant all privileges on db_2.* to &#96;admin&#96;@&#96;localhost&#96;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create user &#96;admin&#96;@&#96;localhost&#96; identified by &#39;123456&#39;;</span><br><span class="line">grant all privileges on db_2.* to &#96;admin&#96;@&#96;localhost&#96;;</span><br></pre></td></tr></table></figure>
 
 
 
 <p>2、给用户admin分配权限：db_2下的查看视图权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">grant select on db_2.v_student_1 to &#96;admin1&#96;;</span><br><span class="line">grant select on db_2.v_student_2 to &#96;admin1&#96;;</span><br><span class="line">grant select on db_2.v_student_3 to &#96;admin1&#96;;</span><br><span class="line">grant select on db_2.v_student_4 to &#96;admin1&#96;;</span><br><span class="line">grant select on db_2.v_student_5 to &#96;admin1&#96;;</span><br><span class="line">grant select on db_2.v_student_6 to &#96;admin1&#96;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grant select on db_2.v_student_1 to &#96;admin1&#96;;</span><br><span class="line">grant select on db_2.v_student_2 to &#96;admin1&#96;;</span><br><span class="line">grant select on db_2.v_student_3 to &#96;admin1&#96;;</span><br><span class="line">grant select on db_2.v_student_4 to &#96;admin1&#96;;</span><br><span class="line">grant select on db_2.v_student_5 to &#96;admin1&#96;;</span><br><span class="line">grant select on db_2.v_student_6 to &#96;admin1&#96;;</span><br></pre></td></tr></table></figure>
 
 
 
 <p>3、回收权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 如果用户不要了，可以直接删除用户，保留用户不给权限，就回收全部权限</span><br><span class="line">revoke all on db_2.* from &#96;admin&#96;@&#96;localhost&#96;;</span><br><span class="line"></span><br><span class="line"># 针对单独授权表的权限回收：只能针对表进行操作</span><br><span class="line">revoke select on db_2.v_student_1 from &#96;admin1&#96;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 如果用户不要了，可以直接删除用户，保留用户不给权限，就回收全部权限</span><br><span class="line">revoke all on db_2.* from &#96;admin&#96;@&#96;localhost&#96;;</span><br><span class="line"></span><br><span class="line"># 针对单独授权表的权限回收：只能针对表进行操作</span><br><span class="line">revoke select on db_2.v_student_1 from &#96;admin1&#96;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1873,7 +1873,7 @@
 </li>
 </ul>
 <p>3、扩展：可以直接使用赋权创建新用户（MySQL7以上不允许这么操作）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant select on db_2.* to &#96;user&#96;@&#96;localhost&#96; with grant option;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grant select on db_2.* to &#96;user&#96;@&#96;localhost&#96; with grant option;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1910,14 +1910,14 @@
 <p>示例</p>
 </blockquote>
 <p>1、创建用户角色，分配给具有同样权限的用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 创建角色（角色与用户名很相似）</span><br><span class="line">create role developer,app_read,app_write;</span><br><span class="line"></span><br><span class="line"># 给角色分配权限</span><br><span class="line">grant all on db_2.* to developer;</span><br><span class="line">grant select on db_2.* to app_read;</span><br><span class="line">grant insert,update,delete on db_2.* to app_write;</span><br><span class="line"></span><br><span class="line"># 创建用户，并分配角色给用户</span><br><span class="line">create user &#39;admin1&#39;@&#39;%&#39; identified by &#39;1234&#39;;</span><br><span class="line">create user &#39;admin2&#39;@&#39;%&#39; identified by &#39;1234&#39;;</span><br><span class="line">create user &#39;admin3&#39;@&#39;%&#39; identified by &#39;1234&#39;;</span><br><span class="line"></span><br><span class="line">grant developer to &#39;admin1&#39;@&#39;%&#39;;</span><br><span class="line">grant app_read to &#39;admin2&#39;@&#39;%&#39;,&#39;admin1&#39;@&#39;%&#39;; # 允许批量给用户分配角色</span><br><span class="line">grant app_write to &#39;admin3&#39;@&#39;%&#39;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 创建角色（角色与用户名很相似）</span><br><span class="line">create role developer,app_read,app_write;</span><br><span class="line"></span><br><span class="line"># 给角色分配权限</span><br><span class="line">grant all on db_2.* to developer;</span><br><span class="line">grant select on db_2.* to app_read;</span><br><span class="line">grant insert,update,delete on db_2.* to app_write;</span><br><span class="line"></span><br><span class="line"># 创建用户，并分配角色给用户</span><br><span class="line">create user &#39;admin1&#39;@&#39;%&#39; identified by &#39;1234&#39;;</span><br><span class="line">create user &#39;admin2&#39;@&#39;%&#39; identified by &#39;1234&#39;;</span><br><span class="line">create user &#39;admin3&#39;@&#39;%&#39; identified by &#39;1234&#39;;</span><br><span class="line"></span><br><span class="line">grant developer to &#39;admin1&#39;@&#39;%&#39;;</span><br><span class="line">grant app_read to &#39;admin2&#39;@&#39;%&#39;,&#39;admin1&#39;@&#39;%&#39;; # 允许批量给用户分配角色</span><br><span class="line">grant app_write to &#39;admin3&#39;@&#39;%&#39;;</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意</strong>：虽然权限已经最终关联到用户，但是用户并不能真正使用权限，还需要权限分配者每次登陆服务器时激活角色：<code>set default role all  to 用户名@主机地址</code>（一次只能激活一个角色）</p>
 <ul>
 <li>激活之后对应的用户需要退出之后重新登录才行</li>
 </ul>
 <p>2、回收角色权限或者角色</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 回收角色权限</span><br><span class="line">revoke insert,delete on db_2.* from app_write;</span><br><span class="line"></span><br><span class="line"># 回收角色</span><br><span class="line">revoke app_read from &#39;admin2&#39;@&#39;%&#39;;</span><br><span class="line"></span><br><span class="line"># 删除角色</span><br><span class="line">drop role developer;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 回收角色权限</span><br><span class="line">revoke insert,delete on db_2.* from app_write;</span><br><span class="line"></span><br><span class="line"># 回收角色</span><br><span class="line">revoke app_read from &#39;admin2&#39;@&#39;%&#39;;</span><br><span class="line"></span><br><span class="line"># 删除角色</span><br><span class="line">drop role developer;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -2219,9 +2219,9 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            线程和进程的区别12进程：有独立的内存空间和系统资源。线程：进程中执行运算的最小单位，可完成一个独立的顺序控制流程。
+                            线程和进程的区别进程：有独立的内存空间和系统资源。线程：进程中执行运算的最小单位，可完成一个独立的顺序控制流程。
 
-线程的创建12345创建和启动线程：	创建：①继承Thread类	      ②实现Runnable接口    启动：①
+线程的创建创建和启动线程：	创建：①继承Thread类	      ②实现Runnable接口    启动：①start()
                         
                     </div>
                     <div class="publish-info">

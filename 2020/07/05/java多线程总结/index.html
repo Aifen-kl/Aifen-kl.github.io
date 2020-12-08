@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java多线程总结, 矢志不渝">
+    <meta name="keywords" content="java多线程总结, HelloWord">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>java多线程总结 | 矢志不渝</title>
+    <title>java多线程总结 | HelloWord</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -41,7 +41,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">矢志不渝</span>
+                    <span class="logo-span">HelloWord</span>
                 </a>
             </div>
             
@@ -140,7 +140,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">矢志不渝</div>
+        <div class="logo-name">HelloWord</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -463,19 +463,19 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="线程和进程的区别"><a href="#线程和进程的区别" class="headerlink" title="线程和进程的区别"></a>线程和进程的区别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">进程：有独立的内存空间和系统资源。</span><br><span class="line">线程：进程中执行运算的最小单位，可完成一个独立的顺序控制流程。</span><br></pre></td></tr></table></figure>
+                <h4 id="线程和进程的区别"><a href="#线程和进程的区别" class="headerlink" title="线程和进程的区别"></a>线程和进程的区别</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">进程：有独立的内存空间和系统资源。</span><br><span class="line">线程：进程中执行运算的最小单位，可完成一个独立的顺序控制流程。</span><br></pre></td></tr></table></figure>
 
-<h4 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建"></a>线程的创建</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">创建和启动线程：</span><br><span class="line">	创建：①继承Thread类</span><br><span class="line">	      ②实现Runnable接口</span><br><span class="line">    启动：①start();----内置了一个同步</span><br><span class="line">          ②run();</span><br></pre></td></tr></table></figure>
+<h4 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建"></a>线程的创建</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">创建和启动线程：</span><br><span class="line">	创建：①继承Thread类</span><br><span class="line">	      ②实现Runnable接口</span><br><span class="line">    启动：①start();----内置了一个同步</span><br><span class="line">          ②run();</span><br></pre></td></tr></table></figure>
 
-<h4 id="继承Thread和实现Runnable的优势"><a href="#继承Thread和实现Runnable的优势" class="headerlink" title="继承Thread和实现Runnable的优势"></a>继承Thread和实现Runnable的优势</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">①：继承Thread类</span><br><span class="line">    编写简单，可直接操作线程</span><br><span class="line">    适用于单继承</span><br><span class="line"></span><br><span class="line">②：实现Runnable接口</span><br><span class="line">    避免单继承局限性</span><br><span class="line">    便于共享资源</span><br></pre></td></tr></table></figure>
+<h4 id="继承Thread和实现Runnable的优势"><a href="#继承Thread和实现Runnable的优势" class="headerlink" title="继承Thread和实现Runnable的优势"></a>继承Thread和实现Runnable的优势</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">①：继承Thread类</span><br><span class="line">    编写简单，可直接操作线程</span><br><span class="line">    适用于单继承</span><br><span class="line"></span><br><span class="line">②：实现Runnable接口</span><br><span class="line">    避免单继承局限性</span><br><span class="line">    便于共享资源</span><br></pre></td></tr></table></figure>
 
-<h4 id="线程的状态和调度"><a href="#线程的状态和调度" class="headerlink" title="线程的状态和调度"></a>线程的状态和调度</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">A：线程的状态：</span><br><span class="line">	创建、就绪、运行、阻塞、死亡。</span><br><span class="line">B：线程调度：</span><br><span class="line">	①线程的优先级(默认为5)</span><br><span class="line">	    setPriority(int grade)</span><br><span class="line">	    Thread.MIN_PRIORITY</span><br><span class="line">	    Thread.MAX_PRIORITY</span><br><span class="line">	②线程的休眠</span><br><span class="line">	    sleep(long millis)</span><br><span class="line">	③线程的强制运行</span><br><span class="line">	    join()</span><br><span class="line">	    join(long millis)</span><br><span class="line">	    join(long millis,int nanos)</span><br><span class="line">	④线程的礼让(只是提供一种可能，不一定实现)</span><br><span class="line">	    yield()</span><br></pre></td></tr></table></figure>
+<h4 id="线程的状态和调度"><a href="#线程的状态和调度" class="headerlink" title="线程的状态和调度"></a>线程的状态和调度</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A：线程的状态：</span><br><span class="line">	创建、就绪、运行、阻塞、死亡。</span><br><span class="line">B：线程调度：</span><br><span class="line">	①线程的优先级(默认为5)</span><br><span class="line">	    setPriority(int grade)</span><br><span class="line">	    Thread.MIN_PRIORITY</span><br><span class="line">	    Thread.MAX_PRIORITY</span><br><span class="line">	②线程的休眠</span><br><span class="line">	    sleep(long millis)</span><br><span class="line">	③线程的强制运行</span><br><span class="line">	    join()</span><br><span class="line">	    join(long millis)</span><br><span class="line">	    join(long millis,int nanos)</span><br><span class="line">	④线程的礼让(只是提供一种可能，不一定实现)</span><br><span class="line">	    yield()</span><br></pre></td></tr></table></figure>
 
-<h4 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">同步(synchronized)</span><br><span class="line">	①同步方法：</span><br><span class="line">		例如：访问修饰符 synchronized 返回类型(参数列表) &#123;  &#125;</span><br><span class="line">	②同步代码块：</span><br><span class="line">		例如：synchronized(this) &#123; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">同步(synchronized)</span><br><span class="line">	①同步方法：</span><br><span class="line">		例如：访问修饰符 synchronized 返回类型(参数列表) &#123;  &#125;</span><br><span class="line">	②同步代码块：</span><br><span class="line">		例如：synchronized(this) &#123; &#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①：线程安全：效率低，适用于多线程。</span><br><span class="line"></span><br><span class="line">②：线程不安全：效率高，适用于单线程。</span><br></pre></td></tr></table></figure>
+<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">①：线程安全：效率低，适用于多线程。</span><br><span class="line"></span><br><span class="line">②：线程不安全：效率高，适用于单线程。</span><br></pre></td></tr></table></figure>
 
-<h4 id="拓展题目"><a href="#拓展题目" class="headerlink" title="拓展题目"></a>拓展题目</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">①：线程创建的三种方式及区别</span><br><span class="line">    https:&#x2F;&#x2F;www.cnblogs.com&#x2F;htyj&#x2F;p&#x2F;10848646.html</span><br><span class="line">②：Java实现线程安全的方式</span><br><span class="line">    https:&#x2F;&#x2F;developer.51cto.com&#x2F;art&#x2F;201910&#x2F;605093.htm</span><br><span class="line">③：JAVA锁有哪些种类，以及区别(没有定力不要看)</span><br><span class="line">    https:&#x2F;&#x2F;www.cnblogs.com&#x2F;lxmyhappy&#x2F;p&#x2F;7380073.html</span><br></pre></td></tr></table></figure>
+<h4 id="拓展题目"><a href="#拓展题目" class="headerlink" title="拓展题目"></a>拓展题目</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">①：线程创建的三种方式及区别</span><br><span class="line">    https:&#x2F;&#x2F;www.cnblogs.com&#x2F;htyj&#x2F;p&#x2F;10848646.html</span><br><span class="line">②：Java实现线程安全的方式</span><br><span class="line">    https:&#x2F;&#x2F;developer.51cto.com&#x2F;art&#x2F;201910&#x2F;605093.htm</span><br><span class="line">③：JAVA锁有哪些种类，以及区别(没有定力不要看)</span><br><span class="line">    https:&#x2F;&#x2F;www.cnblogs.com&#x2F;lxmyhappy&#x2F;p&#x2F;7380073.html</span><br></pre></td></tr></table></figure>
 
 
             </div>
